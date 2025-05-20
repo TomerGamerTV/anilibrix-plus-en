@@ -1,0 +1,112 @@
+{
+  "notifications": {
+    "latestForWeek": "Latest notifications for the week",
+    "empty": {
+      "title": "No notifications yet",
+      "subtitle": "Maybe something interesting will come out soon..."
+    }
+  },
+  "app": {},
+  "greeting": "Hello",
+  "common": {
+    "refresh": "Refresh",
+    "settings": "Settings",
+    "series": "Series"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "appSettingsTooltip": "Application settings",
+    "player": {
+      "playTorrents": "Play torrents",
+      "autoplayNextEpisode": "Autoplay next episode",
+      "autoSkipOpening": "Auto-skip opening",
+      "skipOpeningButton": "Skip opening button"
+    },
+    "system": {
+      "ignoreCertificateErrors": "Ignore certificate errors",
+      "useOperaProxy": "Use Opera Proxy",
+      "discordRichPresence": "Discord Rich Presence",
+      "showSystemNotifications": "Show system notifications",
+      "autoUpdateReleases": "Auto-update releases",
+      "showAdsBeforeEpisode": "Show ads before each episode"
+    },
+    "actions": {
+      "cacheDialogTitle": "Application Cache",
+      "exitDialogTitle": "Exit"
+    }
+  },
+  "catalog": {
+    "title": "Releases catalog",
+    "toolbar": {
+      "refresh": "Refresh",
+      "filters": "Filters"
+    },
+    "filters": {
+      "selectGenres": "Select genres",
+      "selectYears": "Select years",
+      "sortPlaceholder": "Sort by",
+      "sortByNewest": "Sort by newest",
+      "sortByPopularity": "Sort by popularity",
+        "sort": "Sort",
+      "years": "Years"
+    },
+    "toolbar": {
+      "filters": "Filters"
+    }
+  },
+  "favorites": {
+    "title": "Favorite releases",
+    "toolbar": {
+      "searchPlaceholder": "Search favorite releases ..."
+    },
+    "settings": {
+      "watchedReleases": "Watched releases",
+      "onlyCompleted": "Only completed",
+      "sort": "Sort",
+      "sortPlaceholder": "Sort",
+      "grouping": "Grouping",
+      "groupingPlaceholder": "Grouping"
+    }
+  },
+  "release": {
+    "related": "Related",
+    "torrents": {
+      "series": "Series"
+    }
+  },
+  "player": {
+    "links": {
+      "toList": "To releases list",
+      "catalog": "Catalog",
+      "favorites": "Favorites",
+      "episodes": "Episodes",
+      "torrent": "Torrent",
+      "skipOpening": "Skip opening"
+    },
+    "torrent": {
+      "title": "Torrent"
+    },
+    "episodes": {
+      "title": "Episodes"
+    }
+  },
+  "toolbar": {
+    "searchPlaceholder": "Search release ...",
+    "releases": "Releases",
+    "catalog": "Catalog",
+    "favorites": "Favorites"
+  },
+  "account": {
+    "login": {
+      "title": "Authorization",
+      "emailOrLoginPlaceholder": "Email or login",
+      "passwordPlaceholder": "Password"
+    }
+  },
+  "releases": {
+    "error": {
+      "loadErrorTitle": "Error loading releases"
+    }
+  }
+}

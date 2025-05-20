@@ -8,7 +8,7 @@
     hide-no-data
     deletable-chips
     class="filter"
-    placeholder="Года"
+    v-bind:placeholder="$t('catalog.filters.selectYears')"
     :value="_value"
     :items="_items"
     :loading="_loading"

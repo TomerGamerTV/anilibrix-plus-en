@@ -13,10 +13,30 @@
 
     <!-- Header -->
     <v-toolbar flat class="shrink" color="#363636" :class="{'mt-9': !this.isMacOnFullscreen}">
-      <v-toolbar-title class="body-1">Настройки приложения</v-toolbar-title>
+      <v-toolbar-title class="body-1">{{ $t('settings.title') }}</v-toolbar-title>
     </v-toolbar>
     <v-divider/>
 
+    <!-- Language Switcher -->
+    <v-list-item>
+      <v-list-item-content>
+        <v-list-item-title>{{ $t('settings.language') }}</v-list-item-title>
+      </v-list-item-content>
+      <v-list-item-action>
+        <v-select
+          :items="languages"
+          v-model="currentLanguage"
+          item-text="name"
+          item-value="code"
+          @change="changeLanguage"
+          dense
+          outlined
+          hide-details
+          style="max-width: 150px;"
+        ></v-select>
+      </v-list-item-action>
+    </v-list-item>
+    <v-divider/>
 
     <!-- Categories -->
     <component
@@ -55,9 +75,26 @@ export default {
     Credentials,
     SystemBarPlaceholder
   },
+  data() {
+    return {
+      languages: [
+        { name: 'English', code: 'en' },
+        { name: 'Русский', code: 'ru' },
+      ],
+    };
+  },
   computed: {
     ...mapState('app', { _drawer: s => s.drawer }),
     ...mapState('app/settings/system', { _devtools: s => s.devtools }),
+
+    currentLanguage: {
+      get() {
+        return this.$i18n.locale;
+      },
+      set(lang) {
+        this.$i18n.locale = lang;
+      }
+    },
 
     /**
      * Get categories components
@@ -100,6 +137,11 @@ export default {
 
   methods: {
     ...mapActions('app', { _setDrawer: 'setDrawer' }),
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      // Optionally, save the selected language to localStorage or Vuex store
+      // localStorage.setItem('user-language', lang);
+    },
   }
 
 }

@@ -8,6 +8,7 @@ import store from '@store'
 import sentry from '@plugins/sentry'
 import yandex from '@plugins/vue-yandex-metrika'
 import vuetify from '@plugins/vuetify'
+import i18n from '@plugins/i18n';
 
 // Import plugins
 import '@plugins/plyr'
@@ -52,13 +53,11 @@ Vue.use(yandex, {
 })
 
 /* eslint-disable no-new */
-const app = new Vue({
-  store,
+new Vue({
+  components: { App },
   router,
+  store,
   vuetify,
-  template: '<App/>',
-  components: { App }
-})
-
-// Mount app to html
-app.$mount('#anilibrix')
+  i18n,
+  template: '<App/>'
+}).$mount('#app')

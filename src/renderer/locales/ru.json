@@ -1,0 +1,118 @@
+{
+  "notifications": {
+    "latestForWeek": "Последние уведомления за неделю",
+    "empty": {
+      "title": "Пока что здесь нет ни одного уведомления",
+      "subtitle": "Возможно скоро выйдет что-то интересное ..."
+    }
+  },
+  "greeting": "Привет",
+  "common": {
+    "refresh": "Обновить",
+    "settings": "Настройки",
+    "series": "Серии",
+    "exit": "Выход"
+  },
+  "settings": {
+    "title": "Настройки",
+    "language": "Язык",
+    "appSettingsTooltip": "Настройки приложения",
+    "player": {
+      "playTorrents": "Воспроизводить торренты",
+      "autoplayNextEpisode": "Автовоспроизведение следующего эпизода",
+      "autoSkipOpening": "Автоматический пропуск опенинга",
+      "skipOpeningButton": "Кнопка пропуска опенинга",
+      "downloadTorrentFiles": "Загружать торрент-файлы"
+    },
+    "system": {
+      "ignoreCertificateErrors": "Игнорировать ошибки сертификатов",
+      "useOperaProxy": "Использовать Opera Proxy",
+      "discordRichPresence": "Discord Rich Presence",
+      "showSystemNotifications": "Показывать системные уведомления",
+      "autoUpdateReleases": "Автоматическое обновление релизов",
+      "showAdsBeforeEpisode": "Показывать рекламу перед каждым эпизодом",
+      "clearCache": "Очистить кэш",
+      "exitApp": "Выйти из приложения"
+    },
+    "actions": {
+      "cacheDialogTitle": "Кэш приложения",
+      "exitDialogTitle": "Выход"
+    }
+  },
+  "catalog": {
+    "title": "Каталог релизов",
+    "toolbar": {
+      "refresh": "Обновить",
+      "filters": "Фильтры"
+    },
+    "filters": {
+      "selectGenres": "Выберите жанры",
+      "selectYears": "Выберите года",
+      "sortPlaceholder": "Сортировать по",
+      "sortByNewest": "По новизне",
+      "sortByPopularity": "По популярности",
+      "sort": "Сортировка",
+      "years": "Года"
+    }
+  },
+  "favorites": {
+    "title": "Избранные релизы",
+    "toolbar": {
+      "searchPlaceholder": "Поиск по избранным релизам ..."
+    },
+    "settings": {
+      "watchedReleases": "Просмотренные релизы",
+      "onlyCompleted": "Только завершенные",
+      "sort": "Сортировка",
+      "sortPlaceholder": "Сортировка",
+      "grouping": "Группировка",
+      "groupingPlaceholder": "Группировка",
+      "showFavoriteButton": "Показывать кнопку избранного",
+      "showNotifications": "Показывать уведомления",
+      "showTorrentsInFeed": "Показывать торренты в ленте"
+    }
+  },
+  "release": {
+    "related": "Связанное",
+    "torrents": {
+      "series": "Серия"
+    }
+  },
+  "player": {
+    "links": {
+      "toList": "К списку релизов",
+      "catalog": "Каталог",
+      "favorites": "Избранное",
+      "settings": "Настройки",
+      "exit": "Выход",
+      "episodes": "Эпизоды",
+      "torrent": "Торрент",
+      "skipOpening": "Пропустить опенинг"
+    },
+    "torrent": {
+      "title": "Торрент"
+    },
+    "episodes": {
+      "title": "Эпизоды"
+    }
+  },
+  "toolbar": {
+    "searchPlaceholder": "Поиск релиза ...",
+    "releases": "Релизы",
+    "catalog": "Каталог",
+    "favorites": "Избранное",
+    "settings": "Настройки"
+  },
+  "account": {
+    "login": {
+      "title": "Авторизация",
+      "emailOrLoginPlaceholder": "Email или логин",
+      "passwordPlaceholder": "Пароль"
+    }
+  },
+  "releases": {
+    "error": {
+      "loadErrorTitle": "Ошибка при загрузке релизов"
+    }
+  }
+}

@@ -12,3 +12,4 @@ thumbs.db
 .vscode
 dist
 .env
+.trae/rules/project_rules.md

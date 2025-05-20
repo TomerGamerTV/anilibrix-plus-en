@@ -8,7 +8,7 @@
     hide-no-data
     deletable-chips
     class="filter"
-    placeholder="Выбрать жанры"
+    v-bind:placeholder="$t('catalog.filters.selectGenres')"
     :value="_value"
     :items="_items"
     :loading="_loading"
