@@ -65,7 +65,8 @@ export default class CatalogProxy extends BaseProxy {
 
     const params = {
       data,
-      headers: data.getHeaders(), ...parameters
+      headers: data.getHeaders(),
+      ...parameters
     }
     const response = await this.submit('POST', this.getApiEndpoint(), params)
 

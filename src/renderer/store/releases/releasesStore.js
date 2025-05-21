@@ -9,10 +9,10 @@ import EpisodesTransformer from '@transformers/episode'
 // Utils
 import axios from 'axios'
 import axiosRetry from 'axios-retry';
-axiosRetry(axios);
 
 // Handlers
 import { sendReleaseNotification, showAppError } from '@main/handlers/notifications/notificationsHandler'
+axiosRetry(axios);
 
 // Mutations
 const SET_INDEX = 'SET_INDEX'

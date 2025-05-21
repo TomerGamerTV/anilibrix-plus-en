@@ -76,19 +76,19 @@ const cancelingDownload = (storage) => {
  */
 const startedDownload = (callback) => {
   ipcRenderer.on(DOWNLOAD_STARTED, (e, {
+    id,
+    release,
+    episode,
+    source
+  }) =>
+  // eslint-disable-next-line standard/no-callback-literal
+    callback({
       id,
       release,
       episode,
-      source
-    }) =>
-      // eslint-disable-next-line standard/no-callback-literal
-      callback({
-        id,
-        release,
-        episode,
-        source,
-        progress: null
-      })
+      source,
+      progress: null
+    })
   )
 }
 

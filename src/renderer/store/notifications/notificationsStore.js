@@ -12,8 +12,7 @@ export default {
     items: []
   },
   modules: {
-    favorites,
-    app
+    favorites
   },
   mutations: {
 

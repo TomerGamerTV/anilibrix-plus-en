@@ -264,7 +264,6 @@ export default {
         // Show app error
         // Throw error
         showAppError('Произошла ошибка при загрузке фильтров по годам')
-
       } finally {
         commit(SET_FILTER_LOADING, {
           filter,

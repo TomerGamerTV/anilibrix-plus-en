@@ -41,7 +41,7 @@ import { openWindowInterceptor } from '@main/utils/windows/openWindowInterceptor
 import { consoleLogToFile } from '@main/utils/log-to-file';
 import { debounce } from 'lodash';
 import { catGirlFetch } from '../renderer/utils/fetch';
-import {getActiveOperaProxyURL, startOperaProxy, stopOperaProxy} from '@main/utils/opera-proxy';
+import { getActiveOperaProxyURL, startOperaProxy, stopOperaProxy } from '@main/utils/opera-proxy';
 let proxyServer
 app.commandLine.appendSwitch('--no-sandbox')
 const proxyServerValue = store.state.app.settings.system.proxy
@@ -248,7 +248,7 @@ app.on('ready', async () => {
       .catch(x => res.status(500).send())
   })
 
-  serv.listen(9384)
+  serv.listen(9385)
 })
 
 /**

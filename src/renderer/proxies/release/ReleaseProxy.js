@@ -43,7 +43,7 @@ export default class ReleaseProxy extends BaseProxy {
     const { playlist } = response.data.data
     for (const ep in playlist) {
       if (playlist[ep].sources.is_rutube) {
-        playlist[ep].fullhd = 'http://localhost:9384/rutube/' + playlist[ep].rutube_id + '/main.m3u8'
+        playlist[ep].fullhd = 'http://localhost:9385/rutube/' + playlist[ep].rutube_id + '/main.m3u8'
       }
     }
     return this.handleResponse(response.data)

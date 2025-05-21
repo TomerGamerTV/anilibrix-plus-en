@@ -209,9 +209,9 @@ export default {
       dispatch,
       getters
     }, {
-      release_id,
-      episodes
-    }) => {
+        release_id,
+        episodes
+      }) => {
       // eslint-disable-next-line camelcase
       if (release_id && episodes && episodes.length > 0) {
         await Promise.allSettled(
@@ -256,9 +256,9 @@ export default {
       dispatch,
       getters
     }, {
-      release_id,
-      episodes
-    }) => {
+        release_id,
+        episodes
+      }) => {
       // eslint-disable-next-line camelcase
       if (release_id && episodes && episodes.length > 0) {
         await Promise.allSettled(

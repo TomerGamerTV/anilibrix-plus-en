@@ -13,6 +13,7 @@ import Axios from 'axios'
 import store from '@store'
 import { clone, cloneDeep } from 'lodash'
 import FormData from 'form-data'
+import axiosRetry from 'axios-retry';
 
 // Set cookies
 Axios.defaults.withCredentials = true
@@ -20,7 +21,6 @@ Axios.defaults.timeout = 5000
 
 // Create axios
 const axios = Axios.create()
-import axiosRetry from 'axios-retry';
 axiosRetry(axios);
 
 function filterUnderscoredKeys (data) {
@@ -41,7 +41,6 @@ function filterUnderscoredKeys (data) {
 const responseErrorHandler = async error => {
   if (error && error.response) {
     if (error.response.status !== 401) {
-
       let headersList = {}
       if (error.config.headers) {
         const headers = clone(error.config.headers)
@@ -73,7 +72,6 @@ const responseErrorHandler = async error => {
     }
 
     console.error('Request failed with no response', error.message, req)
-
 
     //
     // let dataObject = ''

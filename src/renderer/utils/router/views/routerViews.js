@@ -80,7 +80,8 @@ export const toVideo = (release = null, episode = null, params = {}) => {
         key,
         release,
         episode,
-        releaseName, ...params
+        releaseName,
+        ...params
       }
     })
   }

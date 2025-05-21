@@ -16,7 +16,6 @@ const operaFile = process.env.NODE_ENV === 'development'
   ? path.join(path.dirname(__dirname), '..', '..', 'build', osMap[process.platform], process.arch, 'opera-proxy' + (process.platform === 'win32' ? '.exe' : ''))
   : path.join(path.dirname(__dirname), '..', '..', 'bin', 'opera-proxy' + (process.platform === 'win32' ? '.exe' : ''))
 
-
 async function stopOperaProxy() {
   if (spawnedProcess) {
     spawnedProcess.kill()

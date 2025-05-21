@@ -56,10 +56,10 @@ export default class EpisodesTransformer extends BaseTransformer {
 
       for (const ep in playlist) {
         if (playlist[ep].sources.is_rutube) {
-          playlist[ep].fullhd = 'http://localhost:9384/rutube/' + playlist[ep].rutube_id  + '/main.m3u8'
+          playlist[ep].fullhd = 'http://localhost:9385/rutube/' + playlist[ep].rutube_id + '/main.m3u8'
         }
       }
-        
+
       // Parse playlist
       // Parse upscale
       // Parse torrents
@@ -216,23 +216,23 @@ export default class EpisodesTransformer extends BaseTransformer {
         .allSettled(
           // eslint-disable-next-line no-async-promise-executor
           filteredTorrents.map(torrent => new Promise(async resolve => {
-              // Get blob torrent file from server
-              const file = await new AnilibriaReleaseProxy().getReleaseTorrent(torrent.url, { cancelToken: this.cancelToken })
+            // Get blob torrent file from server
+            const file = await new AnilibriaReleaseProxy().getReleaseTorrent(torrent.url, { cancelToken: this.cancelToken })
 
-              // Check file data is available
-              // Resolve empty if null
-              if (file && file.data) {
-                // Send torrent for parsing data
-                // Catch torrent for parsing
-                sendTorrentParse(torrent.id, file.data)
-                catchTorrentParsedData(torrent.id, data => resolve({
-                  torrent,
-                  data
-                }))
-              } else {
-                resolve(null)
-              }
-            })
+            // Check file data is available
+            // Resolve empty if null
+            if (file && file.data) {
+              // Send torrent for parsing data
+              // Catch torrent for parsing
+              sendTorrentParse(torrent.id, file.data)
+              catchTorrentParsedData(torrent.id, data => resolve({
+                torrent,
+                data
+              }))
+            } else {
+              resolve(null)
+            }
+          })
           )
         ))
         .filter(response => response.status === 'fulfilled')

@@ -9,8 +9,8 @@ import EpisodesTransformer from '@transformers/episode'
 // Utils
 import axios from 'axios'
 import axiosRetry from 'axios-retry';
-axiosRetry(axios);
 import { showAppError } from '@main/handlers/notifications/notificationsHandler'
+axiosRetry(axios);
 
 // Mutations
 const ADD_ITEM = 'ADD_ITEM'
@@ -196,7 +196,7 @@ export default {
             ))
             .filter(promise => promise.status === 'fulfilled')
             .map(promise => promise.value)
-            //.filter(release => release.episodes.length > 0)
+            // .filter(release => release.episodes.length > 0)
             .map(release => ({
               ...release,
               poster: new ReleaseProxy().getReleasePosterPath(release.poster)

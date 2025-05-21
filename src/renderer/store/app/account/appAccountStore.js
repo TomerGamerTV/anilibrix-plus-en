@@ -87,9 +87,9 @@ export default {
       commit,
       dispatch
     }, {
-      login,
-      password
-    }) => {
+        login,
+        password
+      }) => {
       try {
         // Reset session and profile
         await dispatch('setSession', null)

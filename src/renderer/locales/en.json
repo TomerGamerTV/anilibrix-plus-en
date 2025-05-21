@@ -50,9 +50,6 @@
       "sortByPopularity": "Sort by popularity",
         "sort": "Sort",
       "years": "Years"
-    },
-    "toolbar": {
-      "filters": "Filters"
     }
   },
   "favorites": {

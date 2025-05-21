@@ -23,7 +23,8 @@ export default class BaseProxy {
     // eslint-disable-next-line no-return-await
     return await axios.request({
       url,
-      method, ...parameters,
+      method,
+      ...parameters,
       headers,
       timeout: 6000
     })

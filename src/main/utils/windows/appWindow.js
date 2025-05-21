@@ -1,4 +1,4 @@
-import { BrowserWindow, app, session  } from 'electron'
+import { BrowserWindow, app, session } from 'electron'
 import windowStateKeeper from 'electron-window-state'
 import path from 'path'
 
@@ -51,13 +51,13 @@ export default class Window {
     // Apply security-conscious webPreferences
     opts.webPreferences = {
       ...(opts.webPreferences || {}),
-      webSecurity: true, // Disable to false only if absolutely necessary and risks are understood
       allowRunningInsecureContent: false,
       experimentalFeatures: false,
-      contextIsolation: true, // Recommended for security
-      nodeIntegration: false, // Recommended for security, ensure app logic is compatible
+      nodeIntegration: true, // Enabled to fix 'require' and 'process' errors
+      contextIsolation: false, // Disabled to work with nodeIntegration:true
       enableRemoteModule: true, // Required if using @electron/remote, consider alternatives if possible
       // sandbox: true, // Consider enabling sandbox for maximum security, may require IPC refactoring
+      webSecurity: true // Enabled for security best practices
     };
 
     const mainWindowState = windowStateKeeper({
@@ -94,7 +94,7 @@ export default class Window {
         responseHeaders: {
           ...details.responseHeaders,
           'Content-Security-Policy': [
-            "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src *;"
+            "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src *;"
           ]
         }
       });
@@ -115,18 +115,6 @@ export default class Window {
     if (window && windowUrl) {
       window.loadURL(windowUrl)
     }
-
-    // Set Content Security Policy
-    session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-      callback({
-        responseHeaders: {
-          ...details.responseHeaders,
-          'Content-Security-Policy': [
-            "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src *;"
-          ]
-        }
-      });
-    });
 
     return this
   }
@@ -149,18 +137,6 @@ export default class Window {
         })
       }
     }
-
-    // Set Content Security Policy
-    session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-      callback({
-        responseHeaders: {
-          ...details.responseHeaders,
-          'Content-Security-Policy': [
-            "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src *;"
-          ]
-        }
-      });
-    });
 
     return this
   }
