@@ -4,8 +4,8 @@
 
     <!-- Show video -->
     <!-- Show release -->
-    <v-btn class="mr-1" @click="$emit('toVideo')">Смотреть</v-btn>
-    <v-btn class="mr-1" @click="$emit('toRelease')">Релиз</v-btn>
+    <v-btn class="mr-1" @click="$emit('toVideo')">{{ $t('releases.actions.watch') }}</v-btn>
+    <v-btn class="mr-1" @click="$emit('toRelease')">{{ $t('releases.actions.release') }}</v-btn>
 
   </v-layout>
 </template>

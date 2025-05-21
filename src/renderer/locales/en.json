@@ -82,7 +82,9 @@
       "skipOpening": "Skip opening"
     },
     "torrent": {
-      "title": "Torrent"
+      "title": "Torrent",
+      "subtitle": "Data on the torrent being played and connection",
+      "notice": "A small number of seeders and leechers can negatively affect download speeds and lead to playback buffering"
     },
     "episodes": {
       "title": "Episodes"
@@ -95,6 +97,8 @@
     "favorites": "Favorites"
   },
   "account": {
+    "loginTooltip": "Authorization",
+    "logout": "Logout",
     "login": {
       "title": "Authorization",
       "emailOrLoginPlaceholder": "Email or login",
@@ -102,8 +106,15 @@
     }
   },
   "releases": {
-    "error": {
-      "loadErrorTitle": "Error loading releases"
+      "actions": {
+        "watch": "Watch",
+        "release": "Release"
+      },
+      "error": {
+        "loadErrorTitle": "Error loading releases",
+        "connectionOrApiProblem": "Perhaps the problem is related to your connection or the server API",
+        "tryChangingConnectionOrLater": "Try changing your connection settings or try again later",
+        "retry": "Retry"
+      }
     }
   }
-}

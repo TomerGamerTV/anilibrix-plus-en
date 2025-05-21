@@ -8,13 +8,13 @@
 
       <v-col cols="12" sm="6" align-self="center">
         <v-card flat color="transparent">
-          <v-card-title>Ошибка при загрузке релизов</v-card-title>
+          <v-card-title>{{ $t('releases.error.loadErrorTitle') }}</v-card-title>
           <v-card-text>
-            <div>Возможно проблема связана с вашим соединением или API сервера</div>
-            <div>Попробуйте изменить настройки соединения или попробуйте позже</div>
+            <div>{{ $t('releases.error.connectionOrApiProblem') }}</div>
+            <div>{{ $t('releases.error.tryChangingConnectionOrLater') }}</div>
           </v-card-text>
           <v-layout>
-            <v-btn @click="reload">Повторить</v-btn>
+            <v-btn @click="reload">{{ $t('releases.error.retry') }}</v-btn>
           </v-layout>
         </v-card>
       </v-col>

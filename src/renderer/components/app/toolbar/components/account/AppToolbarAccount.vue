@@ -7,7 +7,7 @@
       <v-btn icon id="toolbar__login" @click="toLogin">
         <v-icon>mdi-account</v-icon>
       </v-btn>
-      <v-tooltip left key="login" activator="#toolbar__login">Авторизация</v-tooltip>
+      <v-tooltip left key="login" activator="#toolbar__login">{{ $t('account.loginTooltip') }}</v-tooltip>
     </template>
 
 
@@ -58,7 +58,7 @@
 
           <!-- Logout -->
           <v-list-item @click="logout">
-            <v-list-item-subtitle>Выход</v-list-item-subtitle>
+            <v-list-item-subtitle>{{ $t('account.logout') }}</v-list-item-subtitle>
           </v-list-item>
         </v-list>
 

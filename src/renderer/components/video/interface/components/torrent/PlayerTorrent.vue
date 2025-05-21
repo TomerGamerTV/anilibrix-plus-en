@@ -12,8 +12,8 @@
 
     <!-- Torrent Details -->
     <v-card :class="{'mt-9': !this.isMacOnFullscreen}">
-      <v-card-title>Торрент</v-card-title>
-      <v-card-subtitle>Данные по воспроизводимому торренту и соединению</v-card-subtitle>
+      <v-card-title>{{ $t('player.torrent.title') }}</v-card-title>
+      <v-card-subtitle>{{ $t('player.torrent.subtitle') }}</v-card-subtitle>
       <v-list dense>
         <template v-for="(item, k) in items">
           <v-divider :key="`d:${k}`"/>
@@ -32,8 +32,7 @@
 
     <!-- Notice -->
     <div class="caption grey--text px-4 mt-4">
-      Малое количество сидеров и личеров может негативно сказаться на скорости загрузки и
-      привести к буфферизации воспроизведения
+      {{ $t('player.torrent.notice') }}
     </div>
 
   </v-navigation-drawer>
