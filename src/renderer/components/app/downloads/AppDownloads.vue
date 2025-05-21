@@ -32,7 +32,7 @@
                     :style="{lineHeight: 1}">
                   </v-list-item-title>
                   <v-list-item-subtitle
-                    v-text="`Эпизод: ${file.episode.id} • ${file.source.label}p`"
+                    :v-text="$t('downloads.episodeDetails', { episodeId: file.episode.id, quality: file.source.label })"
                     class="caption"
                     :style="{lineHeight: 1}">
                   </v-list-item-subtitle>

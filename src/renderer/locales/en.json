@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "title": "Application Settings",
+    "languageLabel": "Language"
+  },
+  "toolbar": {
+    "releases": "Releases",
+    "catalog": "Catalog",
+    "favorites": "Favorites",
+    "randomReleaseTooltip": "Random release",
+    "randomReleaseApiNotSupported": "Function not supported by selected API server"
+  },
+  "login": {
+    "title": "Authorization",
+    "instructions": "Please provide the credentials you used to register on the Anilibria website.",
+    "emailOrLoginPlaceholder": "Email or login",
+    "passwordPlaceholder": "Password",
+    "authorizeButton": "Login",
+    "loginViaVkButton": "Login via VK",
+    "userNotRegisteredError": "User not registered"
+  },
+  "buttons": {
+    "back": "Back"
+  },
+  "downloads": {
+    "episodeDetails": "Episode: {episodeId} • {quality}p"
+  }
+}

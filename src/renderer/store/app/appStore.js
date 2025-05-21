@@ -1,10 +1,12 @@
 import watch from './watch'
 import account from './account'
 import settings from './settings'
+import i18n from '@/i18n';
 
 const SET_DRAWER = 'SET_DRAWER'
 const SET_SEARCHING = 'SET_SEARCHING'
 const SET_WELCOME_VIEW = 'SET_WELCOME_VIEW'
+const SET_LANGUAGE = 'SET_LANGUAGE';
 
 export default {
   namespaced: true,
@@ -17,7 +19,8 @@ export default {
   state: {
     drawer: false,
     welcome_view: null,
-    is_searching: false
+    is_searching: false,
+    language: i18n.getCurrentLanguage(),
   },
 
   mutations: {
@@ -45,7 +48,14 @@ export default {
      * @param s
      * @param welcome_view
      */
-    [SET_WELCOME_VIEW]: (s, welcomeView) => (s.welcome_view = welcomeView)
+    [SET_WELCOME_VIEW]: (s, welcomeView) => (s.welcome_view = welcomeView),
+
+    /**
+     * Set language
+     * @param s
+     * @param lang
+     */
+    [SET_LANGUAGE]: (s, lang) => (s.language = lang),
   },
 
   actions: {
@@ -75,6 +85,16 @@ export default {
      * @param commit
      * @param welcomeView
      */
-    setWelcomeView: ({ commit }, welcomeView) => commit(SET_WELCOME_VIEW, welcomeView)
+    setWelcomeView: ({ commit }, welcomeView) => commit(SET_WELCOME_VIEW, welcomeView),
+
+    /**
+     * Set language
+     * @param commit
+     * @param lang
+     */
+    setLanguage: ({ commit }, lang) => {
+      i18n.setLanguage(lang);
+      commit(SET_LANGUAGE, lang);
+    },
   }
 }

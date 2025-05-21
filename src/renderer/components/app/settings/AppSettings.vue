@@ -13,7 +13,21 @@
 
     <!-- Header -->
     <v-toolbar flat class="shrink" color="#363636" :class="{'mt-9': !this.isMacOnFullscreen}">
-      <v-toolbar-title class="body-1">Настройки приложения</v-toolbar-title>
+      <v-toolbar-title class="body-1">{{ $t('settings.title') }}</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-select
+        :items="[{text: 'EN', value: 'en'}, {text: 'RU', value: 'ru'}]"
+        :value="currentLanguage"
+        @change="onLanguageChange"
+        :label="$t('settings.languageLabel')"
+        dense
+        outlined
+        hide-details
+        style="max-width: 120px;"
+        class="ml-2 white--text"
+        item-text="text"
+        item-value="value"
+      ></v-select>
     </v-toolbar>
     <v-divider/>
 
@@ -56,7 +70,10 @@ export default {
     SystemBarPlaceholder
   },
   computed: {
-    ...mapState('app', { _drawer: s => s.drawer }),
+    ...mapState('app', {
+      _drawer: s => s.drawer,
+      currentLanguage: state => state.language
+    }),
     ...mapState('app/settings/system', { _devtools: s => s.devtools }),
 
     /**
@@ -99,7 +116,13 @@ export default {
   },
 
   methods: {
-    ...mapActions('app', { _setDrawer: 'setDrawer' }),
+    ...mapActions('app', {
+      _setDrawer: 'setDrawer',
+      vuexSetLanguage: 'setLanguage'
+    }),
+    onLanguageChange(lang) {
+      this.vuexSetLanguage(lang);
+    }
   }
 
 }

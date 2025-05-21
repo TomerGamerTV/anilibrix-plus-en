@@ -9,6 +9,9 @@ import sentry from '@plugins/sentry'
 import yandex from '@plugins/vue-yandex-metrika'
 import vuetify from '@plugins/vuetify'
 
+// Import i18n service
+import i18n from './i18n';
+
 // Import plugins
 import '@plugins/plyr'
 import '@plugins/moment'
@@ -59,6 +62,11 @@ const app = new Vue({
   template: '<App/>',
   components: { App }
 })
+
+// Make i18n functions available globally
+Vue.prototype.$t = i18n.translate;
+Vue.prototype.$setLanguage = i18n.setLanguage;
+Vue.prototype.$getCurrentLanguage = i18n.getCurrentLanguage;
 
 // Mount app to html
 app.$mount('#anilibrix')

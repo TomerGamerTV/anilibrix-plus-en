@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "title": "Настройки приложения",
+    "languageLabel": "Язык"
+  },
+  "toolbar": {
+    "releases": "Релизы",
+    "catalog": "Каталог",
+    "favorites": "Избранное",
+    "randomReleaseTooltip": "Случайный релиз",
+    "randomReleaseApiNotSupported": "Функция не поддерживается выбранным API сервером"
+  },
+  "login": {
+    "title": "Авторизация",
+    "instructions": "Укажите данные, с которыми вы зарегистрировались на сайте Анилибрии",
+    "emailOrLoginPlaceholder": "Email или логин",
+    "passwordPlaceholder": "Пароль",
+    "authorizeButton": "Авторизация",
+    "loginViaVkButton": "Вход через VK",
+    "userNotRegisteredError": "Пользователь не зарегистрирован"
+  },
+  "buttons": {
+    "back": "Назад"
+  },
+  "downloads": {
+    "episodeDetails": "Эпизод: {episodeId} • {quality}p"
+  }
+}
