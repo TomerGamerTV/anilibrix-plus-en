@@ -13,20 +13,20 @@
 
         <!-- Complete All Episodes -->
         <span v-if="isComplete">
-          <span v-if="!dense">Просмотрены все эпизоды</span>
-          <span v-else>Все эпизоды</span>
+          <span v-if="!dense">{{ $t('releaseProgress.allEpisodesWatched') }}</span>
+          <span v-else>{{ $t('releaseProgress.allEpisodesShort') }}</span>
         </span>
 
         <!-- Not seen episodes -->
         <span v-else-if="isUnseen">
-          <span v-if="!dense">Не просмотрено ни одного эпизода</span>
-          <span v-else>Ни одного эпизода</span>
+          <span v-if="!dense">{{ $t('releaseProgress.noEpisodesWatched') }}</span>
+          <span v-else>{{ $t('releaseProgress.noEpisodesShort') }}</span>
         </span>
 
         <!-- Episodes Progress -->
         <span v-else>
-          <span v-if="!dense">Просмотрено {{ watched }} из {{ episodes.length }}</span>
-          <span v-else>{{ watched }} из {{ episodes.length }}</span>
+          <span v-if="!dense">{{ $t('releaseProgress.watchedOutOfTotal', { watched: watchedNumeric, total: episodes.length }) }}</span>
+          <span v-else>{{ $t('releaseProgress.watchedOutOfTotalShort', { watched: watchedNumeric, total: episodes.length }) }}</span>
         </span>
 
       </div>
@@ -38,6 +38,8 @@
 <script>
 
 import pluralize from '@utils/strings/pluralize'
+
+import { mapGetters } from 'vuex'
 
 const props = {
   release: {
@@ -101,6 +103,18 @@ export default {
     },
 
     /**
+     * Get watched episodes count (numeric)
+     *
+     * @return {number}
+     */
+    watchedNumeric () {
+      const release_id = this.release.id
+      const episodes = (this.episodes || []).map(x => x.id)
+      const payload = { release_id, episodes }
+      return this.$store.getters['app/watch/getWatchedEpisodes'](payload).length
+    },
+
+    /**
      * Get watched episodes
      *
      * @return {*}
@@ -116,9 +130,9 @@ export default {
       }
 
       // Get watched episodes
-      // Convert to string with suffix
-      const watched_episodes = this.$store.getters['app/watch/getWatchedEpisodes'](payload)
-      return pluralize(watched_episodes.length, ['эпизод', 'эпизода', 'эпизодов'])
+      const watched_episodes_count = this.watchedNumeric
+      // Convert to string with suffix using $tc for pluralization
+      return this.$tc('releaseProgress.episodePlural', watched_episodes_count, { count: watched_episodes_count })
 
     },
 

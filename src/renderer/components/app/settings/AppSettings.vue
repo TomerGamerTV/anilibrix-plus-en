@@ -77,15 +77,19 @@ export default {
   },
   data() {
     return {
-      languages: [
-        { name: 'English', code: 'en' },
-        { name: 'Русский', code: 'ru' },
-      ],
+      // Languages are now dynamically generated in computed property
     };
   },
   computed: {
     ...mapState('app', { _drawer: s => s.drawer }),
     ...mapState('app/settings/system', { _devtools: s => s.devtools }),
+
+    languages() {
+      return [
+        { name: this.$t('settings.languages.english'), code: 'en' },
+        { name: this.$t('settings.languages.russian'), code: 'ru' },
+      ];
+    },
 
     currentLanguage: {
       get() {

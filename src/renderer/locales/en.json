@@ -16,6 +16,10 @@
   "settings": {
     "title": "Settings",
     "language": "Language",
+    "languages": {
+      "english": "English",
+      "russian": "Russian"
+    },
     "appSettingsTooltip": "Application settings",
     "player": {
       "playTorrents": "Play torrents",
@@ -49,8 +53,18 @@
       "sortByNewest": "Sort by newest",
       "sortByPopularity": "Sort by popularity",
         "sort": "Sort",
-      "years": "Years"
+      "years": "Years",
+      "genres": "Genres",
+      "genresSubtitle": "You can filter the list of releases by the specified genres",
+      "period": "Period",
+      "periodSubtitle": "You can filter the list of releases by year of release",
+      "sortSubtitle": "You can sort the list of releases by popularity or newest"
     }
+  },
+  "catalogView": {
+    "title": "Releases Catalog",
+    "subtitle": "You can select genres and years to fine-tune the list of releases",
+    "showMore": "Show more"
   },
   "favorites": {
     "title": "Favorite releases",
@@ -65,6 +79,11 @@
       "grouping": "Grouping",
       "groupingPlaceholder": "Grouping"
     }
+  },
+  "favoritesView": {
+    "title": "Favorite Releases",
+    "subtitle": "A list of your favorite releases",
+    "metaTitle": "Favorites"
   },
   "release": {
     "related": "Related",
@@ -105,6 +124,9 @@
       "passwordPlaceholder": "Password"
     }
   },
+  "releasesView": {
+    "metaTitle": "Latest Releases"
+  },
   "releases": {
       "actions": {
         "watch": "Watch",
@@ -115,6 +137,54 @@
         "connectionOrApiProblem": "Perhaps the problem is related to your connection or the server API",
         "tryChangingConnectionOrLater": "Try changing your connection settings or try again later",
         "retry": "Retry"
-      }
     }
+  },
+  "downloads": {
+    "episodeDetails": "Episode: {episodeId} • {sourceLabel}p"
+  },
+  "releaseCard": {
+    "startWatching": "Start watching",
+    "watchFromEpisode": "Watch from {episodeId} series",
+    "team": {
+      "voice": "Voice",
+      "translator": "Translator",
+      "decor": "Decor",
+      "editing": "Subtitles",
+      "timing": "Timing"
+    }
+  },
+  "comments": {
+    "loadError": "Error loading comments",
+    "certError": "Certificate error loading comments"
+  },
+  "releaseView": {
+    "related": "Related",
+    "episodes": "Episodes",
+    "comments": "Comments",
+    "torrents": "Torrents",
+    "metaTitle": "Release [{releaseId}]: {releaseName}",
+    "relatedDataError": "Error loading related data"
+  },
+  "releaseTorrents": {
+    "useMagnetLinks": "Use magnet links",
+    "series": "Series {series}"
+  },
+  "releaseProgress": {
+    "allEpisodesWatched": "All episodes watched",
+    "allEpisodesShort": "All episodes",
+    "noEpisodesWatched": "No episodes watched",
+    "noEpisodesShort": "No episodes",
+    "watchedOutOfTotal": "Watched {watched} out of {total}",
+    "watchedOutOfTotalShort": "{watched} of {total}",
+    "episodePlural": "episode | episodes | episodes"
+  },
+  "blankView": {
+    "back": "Back",
+    "videoNotAvailable": "Video not available",
+    "episodeLoadError": "Error loading episode"
+  },
+  "playerInterface": {
+    "autoSkipOpeningOff": "Auto-skip opening disabled",
+    "autoSkipOpeningOn": "Auto-skip opening enabled"
   }
+}

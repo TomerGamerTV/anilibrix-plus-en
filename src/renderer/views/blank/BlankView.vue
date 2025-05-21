@@ -8,7 +8,7 @@
     <div class="text-center caption" :style="{zIndex: 1}">
       <div>{{ text }}</div>
       <div>{{ error }}</div>
-      <v-btn text class="mt-5" @click="toReleases">Назад</v-btn>
+      <v-btn text class="mt-5" @click="toReleases">{{ $t('blankView.back') }}</v-btn>
     </div>
 
   </v-layout>
@@ -32,7 +32,9 @@ const props = {
 
 export default {
   props,
-  meta: { title: `Видео не доступно` },
+  meta () {
+    return { title: this.$t('blankView.videoNotAvailable') }
+  },
   components: {
     BlankNoise
   },
@@ -45,7 +47,7 @@ export default {
      * @return {string}
      */
     text () {
-      return this.message || 'При загрузке эпизода произошла ошибка'
+      return this.message || this.$t('blankView.episodeLoadError')
     }
 
   },

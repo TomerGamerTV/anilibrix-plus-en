@@ -16,6 +16,10 @@
   "settings": {
     "title": "Настройки",
     "language": "Язык",
+    "languages": {
+      "english": "English",
+      "russian": "Русский"
+    },
     "appSettingsTooltip": "Настройки приложения",
     "player": {
       "playTorrents": "Воспроизводить торренты",
@@ -52,8 +56,18 @@
       "sortByNewest": "По новизне",
       "sortByPopularity": "По популярности",
       "sort": "Сортировка",
-      "years": "Года"
+      "years": "Года",
+      "genres": "Жанры",
+      "genresSubtitle": "Вы можете отфильтровать список релизов по указанным жанрам",
+      "period": "Период",
+      "periodSubtitle": "Вы можете отфильтровать список релизов по годам выпуска",
+      "sortSubtitle": "Вы можете отсортировть список релизов по популярности или новизне"
     }
+  },
+  "catalogView": {
+    "title": "Каталог релизов",
+    "subtitle": "Вы можете выбрать жанры и года для более тонкой настройки списка релизов",
+    "showMore": "Показать еще"
   },
   "favorites": {
     "title": "Избранные релизы",
@@ -71,6 +85,11 @@
       "showNotifications": "Показывать уведомления",
       "showTorrentsInFeed": "Показывать торренты в ленте"
     }
+  },
+  "favoritesView": {
+    "title": "Избранные релизы",
+    "subtitle": "Список ваших избранных релизов",
+    "metaTitle": "Избранное"
   },
   "release": {
     "related": "Связанное",
@@ -114,6 +133,9 @@
       "passwordPlaceholder": "Пароль"
     }
   },
+  "releasesView": {
+    "metaTitle": "Последние релизы"
+  },
   "releases": {
     "actions": {
       "watch": "Смотреть",
@@ -125,5 +147,53 @@
       "tryChangingConnectionOrLater": "Попробуйте изменить настройки соединения или попробуйте позже",
       "retry": "Повторить"
     }
+  },
+  "downloads": {
+    "episodeDetails": "Эпизод: {episodeId} • {sourceLabel}p"
+  },
+  "releaseCard": {
+    "startWatching": "Начать смотреть",
+    "watchFromEpisode": "Смотреть с {episodeId} серии",
+    "team": {
+      "voice": "Озвучили",
+      "translator": "Перевели",
+      "decor": "Оформили",
+      "editing": "Субтитры",
+      "timing": "Таймили"
+    }
+  },
+  "comments": {
+    "loadError": "Произошла ошибка при загрузке комментариев",
+    "certError": "Произошла ошибка при загрузке комментариев. Ошибка с сертификатом"
+  },
+  "releaseView": {
+    "related": "Связанное",
+    "episodes": "Эпизоды",
+    "comments": "Комментарии",
+    "torrents": "Торренты",
+    "metaTitle": "Релиз [{releaseId}]: {releaseName}",
+    "relatedDataError": "Ошибка загрузки связанных данных"
+  },
+  "releaseTorrents": {
+    "useMagnetLinks": "Использовать magnet ссылки",
+    "series": "Серия {series}"
+  },
+  "releaseProgress": {
+    "allEpisodesWatched": "Просмотрены все эпизоды",
+    "allEpisodesShort": "Все эпизоды",
+    "noEpisodesWatched": "Не просмотрено ни одного эпизода",
+    "noEpisodesShort": "Ни одного эпизода",
+    "watchedOutOfTotal": "Просмотрено {watched} из {total}",
+    "watchedOutOfTotalShort": "{watched} из {total}",
+    "episodePlural": "эпизод | эпизода | эпизодов"
+  },
+  "blankView": {
+    "back": "Назад",
+    "videoNotAvailable": "Видео не доступно",
+    "episodeLoadError": "При загрузке эпизода произошла ошибка"
+  },
+  "playerInterface": {
+    "autoSkipOpeningOff": "Автопропуск опенинга выключен",
+    "autoSkipOpeningOn": "Автопропуск опенинга включен"
   }
 }

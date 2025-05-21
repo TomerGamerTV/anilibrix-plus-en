@@ -22,7 +22,7 @@
             class="mx-4 my-2 font-weight-black"
             style="width: 230px;"
           >
-            Начать смотреть
+            {{ $t('releaseCard.startWatching') }}
           </v-btn>
 
           <v-btn
@@ -33,7 +33,7 @@
             class="mx-4 my-2 font-weight-black"
             style="width: 230px;"
           >
-            Смотреть с {{ lastWatchedEpisode.next.id }} серии
+            {{ $t('releaseCard.watchFromEpisode', { episodeId: lastWatchedEpisode.next.id }) }}
           </v-btn>
         </div>
 
@@ -46,7 +46,7 @@
           <v-card-subtitle v-text="genres" class="allow-select pt-1"/>
 
           <div style="margin-bottom: -10px;" v-for="(type, prop) in release.team" :key="prop" class="pl-4" v-if="type.length">
-            <span class="subtitle-2" style="color: rgb(184 184 184);">{{ teamProps[prop] }}:</span>
+            <span class="subtitle-2" style="color: rgb(184 184 184);">{{ $t('releaseCard.team.' + prop) }}:</span>
             <v-chip
               v-for="name in type"
               :key="name"
@@ -101,13 +101,7 @@ export default {
   },
   data () {
     return {
-      teamProps: {
-        voice: 'Озвучили',
-        translator: 'Перевели',
-        decor: 'Оформили',
-        editing: 'Субтитры',
-        timing: 'Таймили'
-      }
+      // teamProps are now directly translated in the template
     }
   },
   computed: {
