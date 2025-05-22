@@ -3,19 +3,19 @@
       <!-- Releases -->
       <v-btn small text exact class="mr-1" height="38" :to="{name: 'releases'}">
         <v-icon size="18" class="mr-2">mdi-view-column</v-icon>
-        <span>Релизы</span>
+        <span>{{ $t('toolbar.releases') }}</span>
       </v-btn>
 
       <!-- Catalog-->
       <v-btn small text exact class="mr-1" height="38" :to="{name: 'catalog'}">
         <v-icon size="18" class="mr-2">mdi-folder-text-outline</v-icon>
-        <span>Каталог</span>
+        <span>{{ $t('toolbar.catalog') }}</span>
       </v-btn>
 
       <!-- Favorite -->
       <v-btn small text exact class="mr-4" height="38" :to="{name: 'favorites'}">
         <v-icon size="18" class="mr-2">mdi-star</v-icon>
-        <span>Избранное</span>
+        <span>{{ $t('toolbar.favorites') }}</span>
       </v-btn>
 
       <!-- Search-->
@@ -26,7 +26,7 @@
           <v-icon>mdi-dice-{{ dice }}</v-icon>
         </v-btn>
 
-        <v-tooltip left activator="#toolbar__rand">Случайный релиз</v-tooltip>
+        <v-tooltip left activator="#toolbar__rand">{{ $t('toolbar.randomReleaseTooltip') }}</v-tooltip>
       </div>
 
       <update/>
@@ -74,7 +74,7 @@ export default {
       try {
         const {id, name} = await invokeRand()
         if (id === -1) {
-          this.$toasted.show('Функция не поддерживается выбранным API сервером', {type: 'error'})
+          this.$toasted.show(this.$t('toolbar.randomReleaseUnsupported'), {type: 'error'})
           return
         }
         await this.$router.push('/release/' + id + '/' + name)

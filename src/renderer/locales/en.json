@@ -11,7 +11,10 @@
   "common": {
     "refresh": "Refresh",
     "settings": "Settings",
-    "series": "Series"
+    "series": "Series",
+    "hotKeyPlaceholder": "Press key combination here",
+    "seconds": "sec",
+    "minutes": "min"
   },
   "settings": {
     "title": "Settings",
@@ -25,7 +28,24 @@
       "playTorrents": "Play torrents",
       "autoplayNextEpisode": "Autoplay next episode",
       "autoSkipOpening": "Auto-skip opening",
-      "skipOpeningButton": "Skip opening button"
+      "skipOpeningButton": "Skip opening button",
+      "subtitle": "In this section you can configure the ability to watch releases using torrents, as well as other playback settings",
+      "torrentsTitle": "Torrents",
+      "torrentsDescription1": "You can connect torrents that will automatically be linked to release episodes and available for viewing.",
+      "torrentsDescription2": "Torrents do not require a third-party player or client and are available online, in the release playback quality selection menu.",
+      "torrentsWarning": "Using torrents requires more connection and parsing time, which can negatively affect the speed of loading data for releases, especially when using a proxy server",
+      "autoplayNextEpisodeDescription": "After the episode ends, the player will automatically start playing the next episode in the release, if available",
+      "videoBufferTitle": "Video buffer size",
+      "videoBufferDescription": "Video preload buffer size, default 5 minutes",
+      "videoBufferLabel": "Buffer size in seconds",
+      "videoBufferHint": "Specifies the amount of buffer that the player keeps in memory and preloads video during viewing",
+      "autoSkipOpeningDescription": "If there are opening skip marks, it will be skipped automatically",
+      "autoSkipHotKey": "Hotkey for enabling and disabling auto-skip",
+      "skipOpeningButtonDescription1": "An additional button will appear in the player interface that will rewind the player by the specified number of seconds",
+      "skipOpeningButtonDescription2": "This button does not guarantee correct opening skipping",
+      "skipOpeningButtonHotKey": "Hotkey for the opening skip button",
+      "skipOpeningTimeDescription": "You can specify how many seconds to skip the opening",
+      "skipOpeningTimeLabel": "Number of seconds to skip the opening"
     },
     "system": {
       "ignoreCertificateErrors": "Ignore certificate errors",
@@ -33,16 +53,61 @@
       "discordRichPresence": "Discord Rich Presence",
       "showSystemNotifications": "Show system notifications",
       "autoUpdateReleases": "Auto-update releases",
-      "showAdsBeforeEpisode": "Show ads before each episode"
+      "showAdsBeforeEpisode": "Show ads before each episode",
+      "title": "Application settings",
+      "subtitle": "In this section you can configure automatic release updates, system notifications and other application parameters",
+      "moveControlsRight": "Move control buttons to the right",
+      "moveControlsRightDescription": "Moves window control buttons (minimize, close and expand) to the right",
+      "filterNotificationsByFavorites": "Filter notifications by favorites",
+      "filterNotificationsByFavoritesDescription": "Enables showing notifications only for releases from favorites",
+      "ignoreCertificateErrorsDescription": "Ignoring trusted certificate verification",
+      "proxyServerLabel": "Proxy server",
+      "proxyDescription1": "Proxy for connecting to the static server and API. HTTP and HTTPS are supported",
+      "proxyDescription2": "After changing the access point, it is recommended to restart the application",
+      "apiEndpointLabel": "API connection point",
+      "staticEndpointLabel": "Static server connection point",
+      "endpointDescription1": "You can use the main domain if it is not blocked by your provider, or use additional domains",
+      "endpointDescription2": "You can enter your API and static server connection point in the \"API connection point\" and \"Static server connection point\" fields",
+      "discordRichPresenceDescription": "The application will display information about the release being viewed in Discord Rich Presence",
+      "showSystemNotificationsDescription": "If the application detects an updated release when loading the latest releases, it will show a system notification about a new episode",
+      "autoUpdateReleasesDescription": "The application will update the latest releases in the background, even if it is minimized",
+      "updateIntervalDescription": "You can specify how often the application will update releases in the background",
+      "updateIntervalLabel": "Release update interval",
+      "showAdsBeforeEpisodeDescription": "If this option is disabled, ads will not be shown before each episode"
     },
     "actions": {
       "cacheDialogTitle": "Application Cache",
-      "exitDialogTitle": "Exit"
+      "exitDialogTitle": "Exit",
+      "title": "System commands",
+      "subtitle": "Some useful commands to manage the application",
+      "reloadApp": "Reload application",
+      "showConfigFile": "Show config file location",
+      "minimizeApp": "Minimize application",
+      "closeApp": "Close application",
+      "resetCache": "Reset application cache and settings"
+    },
+    "app": {
+      "anilibria": "Anilibria",
+      "supportProject": "Support project",
+      "paymentMethods": "Yandex.Money, QIWI, PayPal",
+      "unofficialTelegram": "Unofficial releases Telegram channel",
+      "telegramChannel": "Telegram channel",
+      "sourceCode": "Source code"
+    },
+    "devtools": {
+      "title": "Debugging tools",
+      "subtitle": "List of tools for debugging the application. Intended mainly for developers",
+      "appConsole": "Application console",
+      "torrentConsole": "Torrent-server console",
+      "addNotification": "Add notification to storage",
+      "showStorageData": "Show storage data in console"
     }
   },
   "catalog": {
     "title": "Releases catalog",
     "toolbar": {
+    "randomReleaseTooltip": "Random release",
+    "randomReleaseUnsupported": "Function not supported by selected API server",
       "refresh": "Refresh",
       "filters": "Filters"
     },
@@ -69,6 +134,8 @@
   "favorites": {
     "title": "Favorite releases",
     "toolbar": {
+    "randomReleaseTooltip": "Random release",
+    "randomReleaseUnsupported": "Function not supported by selected API server",
       "searchPlaceholder": "Search favorite releases ..."
     },
     "settings": {
@@ -110,6 +177,8 @@
     }
   },
   "toolbar": {
+    "randomReleaseTooltip": "Random release",
+    "randomReleaseUnsupported": "Function not supported by selected API server",
     "searchPlaceholder": "Search release ...",
     "releases": "Releases",
     "catalog": "Catalog",

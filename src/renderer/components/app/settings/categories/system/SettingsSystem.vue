@@ -2,11 +2,8 @@
   <div ref="settings">
 
     <div class="pa-4 caption grey--text">
-      <div class="body-1">Настройки приложения</div>
-      <div>
-        В данном разделе вы можете настроить автоматическое обновление релизов, системные уведомления
-        и другие параметры приложения
-      </div>
+      <div class="body-1">{{ $t('settings.system.title') }}</div>
+      <div>{{ $t('settings.system.subtitle') }}</div>
     </div>
 
     <!-- Appbar inverse -->
@@ -14,7 +11,7 @@
       <v-card class="mt-2">
         <v-list-item dense @click="_setAppbarRight(!_appbar_right)">
           <v-list-item-title>
-            Переместить кнопки контроля вправо
+            {{ $t('settings.system.moveControlsRight') }}
           </v-list-item-title>
 
           <v-list-item-action class="mr-2">
@@ -24,7 +21,7 @@
 
         <v-card-text class="pt-2">
           <div class="caption">
-            Перемещает кнопки упралвления окном (свернуть, закрыть и развернуть) вправо
+            {{ $t('settings.system.moveControlsRightDescription') }}
           </div>
         </v-card-text>
       </v-card>
@@ -34,7 +31,7 @@
     <v-card class="mt-2">
       <v-list-item dense @click="_setFilterNotify(!_filter_notify)">
         <v-list-item-title>
-          Фильтровать уведомления по избранному
+          {{ $t('settings.system.filterNotificationsByFavorites') }}
         </v-list-item-title>
 
         <v-list-item-action class="mr-2">
@@ -44,26 +41,26 @@
 
       <v-card-text class="pt-2">
         <div class="caption">
-          Включает показ уведомлений только для релизов из избранного
+          {{ $t('settings.system.filterNotificationsByFavoritesDescription') }}
         </div>
       </v-card-text>
     </v-card>
 
     <v-card class="mt-2">
       <v-list-item dense @click="_setIgnoreCerts(!_ignore_certs)">
-        <v-list-item-title>Игнорировать ошибки сертификатов</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.system.ignoreCertificateErrors') }}</v-list-item-title>
         <v-list-item-action class="mr-2">
           <v-switch :input-value="_ignore_certs" @change="_setIgnoreCerts"/>
         </v-list-item-action>
       </v-list-item>
       <v-card-text class="pt-2 caption">
-        Игнорирование проверки доверенных сертификатов
+        {{ $t('settings.system.ignoreCertificateErrorsDescription') }}
       </v-card-text>
     </v-card>
 
     <v-card class="mt-2">
       <v-list-item dense @click="toggleOperaProxy">
-        <v-list-item-title>Использовать Opera Proxy</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.system.useOperaProxy') }}</v-list-item-title>
         <v-list-item-action class="mr-2">
           <v-switch :input-value="_proxy === 'http://opera'" @click="toggleOperaProxy"/>
         </v-list-item-action>
@@ -78,16 +75,16 @@
           class="mb-2"
           :value="_proxy"
           @input="setProxyServer($event)"
-          label="Прокси сервер"
+          :label="$t('settings.system.proxyServerLabel')"
           persistent-hint
         />
 
         <div class="caption">
           <div>
-            Прокси для подключения к серверу статики и API. Поддерживается HTTP и HTTPS
+            {{ $t('settings.system.proxyDescription1') }}
           </div>
           <div>
-            <b>После изменения точки доступа рекомендуется перезагрузить приложение</b>
+            <b>{{ $t('settings.system.proxyDescription2') }}</b>
           </div>
         </div>
       </v-card-text>
@@ -101,7 +98,7 @@
           :value="_api_endpoint"
           @input="_setAPIEndpoint($event ? $event : process.env.API_ENDPOINT_URL)"
           :items="['https://anilibria.tv/', 'https://wwnd.space/', 'https://anilibriaqt.anilib.top/', 'https://anilibrix.anilib.top/', 'https://anilibria.animehaze.me/']"
-          label="Точка подключения к API"
+          :label="$t('settings.system.apiEndpointLabel')"
           persistent-hint
         />
 
@@ -111,30 +108,29 @@
           :value="_static_endpoint"
           @input="_setAPIStaticEndpoint($event ? $event : process.env.STATIC_ENDPOINT_URL)"
           :items="['https://static-libria.weekstorm.one/', 'https://static.anilibria.tv/', 'https://static.wwnd.space/', 'https://anilibriaqt.anilib.top/', 'https://anilibrix.anilib.top/', 'https://anilibria.animehaze.me/']"
-          label="Точка подключения к серверу статики"
+          :label="$t('settings.system.staticEndpointLabel')"
           persistent-hint
         />
 
         <div class="caption">
-          Вы можете использовать основной домен, если он не заблокирован вашим провайдером, или использовать
-          дополнительные домены
+          {{ $t('settings.system.endpointDescription1') }}
 
-          Вы можете ввесли свю точку подключения к API и серверу статики в поле "Точка подключения к API" и "Точка подключения к серверу статики"
+          {{ $t('settings.system.endpointDescription2') }}
 
-          <b>После изменения точки доступа рекомендуется перезагрузить приложение</b>
+          <b>{{ $t('settings.system.proxyDescription2') }}</b>
         </div>
       </v-card-text>
     </v-card>
 
     <v-card class="mt-2">
       <v-list-item dense @click="_setDRPC(!_drpc_enabled)">
-        <v-list-item-title>Discord Rich Presence</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.system.discordRichPresence') }}</v-list-item-title>
         <v-list-item-action class="mr-2">
           <v-switch :input-value="_drpc_enabled" @change="_setDRPC"/>
         </v-list-item-action>
       </v-list-item>
       <v-card-text class="pt-2 caption">
-        Приложение будет выводть информацию о просматриваемом релизе в Discord Rich Presence
+        {{ $t('settings.system.discordRichPresenceDescription') }}
       </v-card-text>
     </v-card>
     <v-divider/>
@@ -142,15 +138,14 @@
     <!-- System Notifications -->
     <v-card>
       <v-list-item dense @click="_setSystemNotifications(!_notifications_system)">
-        <v-list-item-title>Показывать системные уведомления</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.system.showSystemNotifications') }}</v-list-item-title>
         <v-list-item-action class="mr-2">
           <v-switch :input-value="_notifications_system" @change="_setSystemNotifications"/>
         </v-list-item-action>
       </v-list-item>
       <v-card-text class="pt-2">
         <div class="caption">
-          Если при загрузке последних релизов приложение обнаружит обновленный релиз,
-          то оно покажет системное уведомление о новом эпизоде
+          {{ $t('settings.system.showSystemNotificationsDescription') }}
         </div>
       </v-card-text>
     </v-card>
@@ -159,13 +154,13 @@
     <!-- Auto update -->
     <v-card class="mt-2">
       <v-list-item dense @click="_setUpdates(!_updates_enabled)">
-        <v-list-item-title>Автоматическое обновление релизов</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.system.autoUpdateReleases') }}</v-list-item-title>
         <v-list-item-action class="mr-2">
           <v-switch :input-value="_updates_enabled" @change="_setUpdates"/>
         </v-list-item-action>
       </v-list-item>
       <v-card-text class="pt-2 caption">
-        Приложение будет в фоне обновлять последние релизы, даже если оно свернуто
+        {{ $t('settings.system.autoUpdateReleasesDescription') }}
       </v-card-text>
     </v-card>
     <v-divider/>
@@ -174,7 +169,7 @@
     <v-card>
       <v-card-text class="pb-2">
         <div class="caption">
-          Вы можете указать с какой периодичностью приложение будет обновлять релизы в фоновом режиме
+          {{ $t('settings.system.updateIntervalDescription') }}
         </div>
       </v-card-text>
       <v-card-text>
@@ -183,8 +178,8 @@
           hide-details
           class="mb-2"
           type="number"
-          label="Периодичность обновления релизов"
-          suffix="мин"
+          :label="$t('settings.system.updateIntervalLabel')"
+          :suffix="$t('common.minutes')"
           :value="_updates_timeout"
           @input="_setUpdatesTimeout($event ? parseInt($event) : 1)">
         </v-text-field>
@@ -213,14 +208,14 @@
     <!-- Ads Maximum -->
 <!--    <v-card class="mt-2">
       <v-list-item dense @click="_setAdsMaximum(!_ads_maximum)">
-        <v-list-item-title>Показывать рекламу перед каждым эпизодом</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.system.showAdsBeforeEpisode') }}</v-list-item-title>
         <v-list-item-action class="mr-2">
           <v-switch :input-value="_ads_maximum" @change="_setAdsMaximum"/>
         </v-list-item-action>
       </v-list-item>
       <v-card-text class="pt-2 caption">
         <div>Максимальная поддержка проекта!</div>
-        <div>Реклама будет показываться перед каждым просмотром любого эпизода</div>
+        <div>{{ $t('settings.system.showAdsBeforeEpisodeDescription') }}</div>
       </v-card-text>
     </v-card>-->
 
