@@ -6,6 +6,10 @@
       "subtitle": "Возможно скоро выйдет что-то интересное ..."
     }
   },
+  "app": {},
+  "ads": {
+    "metaTitle": "Реклама"
+  },
   "greeting": "Привет",
   "common": {
     "refresh": "Обновить",
@@ -14,7 +18,8 @@
     "exit": "Выход",
     "hotKeyPlaceholder": "Нажми тут сочетание клавиш",
     "seconds": "сек",
-    "minutes": "мин"
+    "minutes": "мин",
+    "reset": "Сбросить"
   },
   "settings": {
     "title": "Настройки",
@@ -48,6 +53,27 @@
       "skipOpeningTimeDescription": "Вы можете указать на сколько секунд пропускать опенинг",
       "skipOpeningTimeLabel": "Количество секунд для пропуска опенинга"
     },
+    "snapshots": {
+      "confirmRemove": "Вы уверены, что хотите удалить снимок?",
+      "confirmRestore": "Вы уверены, что хотите восстановить данные из снимка?",
+      "restoreWarning": "Это действие нельзя отменить. Текущие данные будут заменены данными из снимка.",
+      "restoredMessage": "Данные из снимка применены",
+      "title": "Снимки",
+      "description": "Вы можете создавать резервные копии данных приложения, связанные с вашей учетной записью Anilibria",
+      "listTitle": "Список снимков",
+      "createTitle": "Создать снимок",
+      "confirmCreate": "Вы уверены, что хотите создать снимок?",
+      "consentRequired": "Требуется согласие на передачу данных (идентификатора сессии) на сторонний сервер для работы со снимками",
+      "passwordDisclaimer": "<b>Пароль от учетной записи не раскрывается и не передается ни в какой форме</b>",
+      "agree": "Я согласен",
+      "disagree": "Нет, спасибо",
+      "newSnapshot": "Новый снимок",
+      "table": {
+        "creationDateTime": "Дата и время создания",
+        "actions": "Действия"
+      }
+    },
+    "maxSupport": "Максимальная поддержка проекта!",
     "system": {
       "ignoreCertificateErrors": "Игнорировать ошибки сертификатов",
       "useOperaProxy": "Использовать Opera Proxy",
@@ -87,7 +113,19 @@
       "showConfigFile": "Показать расположение конфиг файла",
       "minimizeApp": "Свернуть приложение",
       "closeApp": "Закрыть приложение",
-      "resetCache": "Сбросить кеш и настройки приложения"
+      "resetCache": "Сбросить кеш и настройки приложения",
+      "confirmExit": "Вы уверены, что хотите выйти из приложения?",
+      "confirmResetCache": "Вы уверены, что хотите сбросить кэш и настройки приложения?",
+      "shortcuts": {
+        "closeMac": "⌘Q",
+        "closeWin": "Alt + Q",
+        "reloadMac": "⌘⇧R",
+        "reloadWin": "Ctrl + Shift + R",
+        "minimizeMac": "⌘M",
+        "minimizeWin": "Ctrl + M",
+        "fullscreenMac": "⌃⌘F",
+        "fullscreenWin": "Ctrl + F"
+      }
     },
     "app": {
       "anilibria": "Анилибрия",
@@ -148,9 +186,12 @@
       "sortPlaceholder": "Сортировка",
       "grouping": "Группировка",
       "groupingPlaceholder": "Группировка",
-      "showFavoriteButton": "Показывать кнопку избранного",
-      "showNotifications": "Показывать уведомления",
-      "showTorrentsInFeed": "Показывать торренты в ленте"
+    "showFavoriteButton": "Показывать кнопку избранного",
+    "showNotifications": "Показывать уведомления",
+    "showTorrentsInFeed": "Показывать торренты в ленте"
+    },
+    "error": {
+      "loadErrorTitle": "Ошибка при загрузке избранных релизов"
     }
   },
   "favoritesView": {
@@ -182,6 +223,9 @@
     },
     "episodes": {
       "title": "Эпизоды"
+    },
+    "status": {
+      "paused": "ПАУЗА"
     }
   },
   "toolbar": {
@@ -206,15 +250,16 @@
     "metaTitle": "Последние релизы"
   },
   "releases": {
-    "actions": {
-      "watch": "Смотреть",
-      "release": "Релиз"
-    },
-    "error": {
-      "loadErrorTitle": "Ошибка при загрузке релизов",
-      "connectionOrApiProblem": "Возможно проблема связана с вашим соединением или API сервера",
-      "tryChangingConnectionOrLater": "Попробуйте изменить настройки соединения или попробуйте позже",
-      "retry": "Повторить"
+      "actions": {
+        "watch": "Смотреть",
+        "release": "Релиз"
+      },
+      "error": {
+        "loadErrorTitle": "Ошибка при загрузке релизов",
+        "searchErrorTitle": "Ошибка при поиске релизов",
+        "connectionOrApiProblem": "Возможно проблема связана с вашим соединением или API сервера",
+        "tryChangingConnectionOrLater": "Попробуйте изменить настройки соединения или попробуйте позже",
+        "retry": "Повторить"
     }
   },
   "downloads": {

@@ -39,7 +39,7 @@ export default class BaseProxy {
   handleResponse (response) {
     const data = __get(response, 'data', null)
     const status = __get(response, 'status', false)
-    const message = __get(response, 'error.message', 'Ошибка при запросе')
+    const message = __get(response, 'error.message', this.$t('common.requestError'))
 
     if (status === true) {
       return data

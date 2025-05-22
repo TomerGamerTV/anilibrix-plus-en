@@ -209,7 +209,7 @@ export default {
             // Show error
             // Throw error
             console.error(error)
-            showAppError('Произошла ошибка при загрузке избранных релизов')
+            showAppError(this.$t('favorites.error.loadErrorTitle'))
           }
         } finally {
           commit(SET_LOADING, false)

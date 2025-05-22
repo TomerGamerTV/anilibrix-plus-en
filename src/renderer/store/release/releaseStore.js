@@ -92,7 +92,7 @@ export default {
         if (!axios.isCancel(error)) {
           // Show app error
           // Throw error
-          showAppError('Произошла ошибка при загрузке релиза')
+          showAppError(this.$t('releaseView.loadError'))
         }
       } finally {
         commit(SET_RELEASE_LOADING, false)

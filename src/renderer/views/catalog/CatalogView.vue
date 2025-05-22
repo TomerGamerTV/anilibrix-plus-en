@@ -50,7 +50,7 @@ import {nextTick} from "vue";
 
 export default {
   name: 'Catalog.View',
-  meta: { title: 'Каталог' },
+  meta: { title: this.$t('catalogView.metaTitle') },
   components: {
     Loader,
     Toolbar,

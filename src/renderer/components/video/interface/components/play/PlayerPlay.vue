@@ -145,7 +145,7 @@ export default {
       a.setLargeImageText('AniLibrix plus t.me/anilibrix_plus')
       a.firstLine(`[${this.episode.id}/${this.episodes.length}] ` + this.title)
 
-      a.secondLine(`${humanTime(this.player.currentTime)} / ${humanTime(this.player.duration)}` + (this.player.paused ? ' [ПАУЗА]' : ''))
+      a.secondLine(`${humanTime(this.player.currentTime)} / ${humanTime(this.player.duration)}` + (this.player.paused ? ` [${this.$t('player.status.paused')}]` : ''))
       a.firstButton('Anilibria.TV', 'https://anilibria.tv')
       // a.start(new Date())
       // const d = new Date()

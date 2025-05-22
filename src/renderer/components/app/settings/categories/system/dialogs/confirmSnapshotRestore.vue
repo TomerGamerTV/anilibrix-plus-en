@@ -136,7 +136,7 @@ export default {
             if (autoUpdateReleases !== undefined) this._setUpdates(autoUpdateReleases)
             if (autoUpdateInterval !== undefined) this._setUpdatesTimeout(autoUpdateInterval)
 
-            this.$toasted.show("Данные из снапшота применены", {
+            this.$toasted.show(this.$t('settings.snapshots.restoredMessage'), {
               type: 'success',
               position: "top-center",
               duration : 2000

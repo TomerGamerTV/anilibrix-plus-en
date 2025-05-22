@@ -4,9 +4,12 @@
     "empty": {
       "title": "No notifications yet",
       "subtitle": "Maybe something interesting will come out soon..."
-    }
+    },
+    "newEpisodeOut": "Episode {{episodeNumber}} is out"
   },
-  "app": {},
+  "ads": {
+    "metaTitle": "Advertisements"
+  },
   "greeting": "Hello",
   "common": {
     "refresh": "Refresh",
@@ -14,7 +17,17 @@
     "series": "Series",
     "hotKeyPlaceholder": "Press key combination here",
     "seconds": "sec",
-    "minutes": "min"
+    "minutes": "min",
+    "warning": "WARNING",
+    "yes": "Yes",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "noData": "No data",
+    "releasePlural": "release | releases | releases",
+    "hourPlural": "hour | hours | hours",
+    "requestError": "Request error",
+    "serverError": "Server error",
+    "close": "Close"
   },
   "settings": {
     "title": "Settings",
@@ -22,6 +35,11 @@
     "languages": {
       "english": "English",
       "russian": "Russian"
+    },
+    "app": {
+      "unofficialBuild": "Unofficial build {{version}}",
+      "aboutApp": "About application",
+      "disclaimer": "All material in the application is provided for informational home viewing only."
     },
     "appSettingsTooltip": "Application settings",
     "player": {
@@ -47,6 +65,30 @@
       "skipOpeningTimeDescription": "You can specify how many seconds to skip the opening",
       "skipOpeningTimeLabel": "Number of seconds to skip the opening"
     },
+    "proxy": {
+      "pacScriptError": "Error parsing PAC script"
+    },
+    "snapshots": {
+      "confirmRemove": "Are you sure you want to delete the snapshot?",
+      "confirmRestore": "Are you sure you want to restore data from the snapshot?",
+      "restoreWarning": "This action cannot be undone. Current data will be replaced with data from the snapshot.",
+      "restoredMessage": "Data from snapshot applied",
+      "title": "Snapshots",
+      "description": "You can create backups of application data linked to your Anilibria account",
+      "listTitle": "List of snapshots",
+      "createTitle": "Create snapshot",
+      "confirmCreate": "Are you sure you want to create a snapshot?",
+      "consentRequired": "Consent is required to transfer data (session identifier) to a third-party server for working with snapshots",
+      "passwordDisclaimer": "<b>Account password is not disclosed or transferred in any form</b>",
+      "agree": "I agree",
+      "disagree": "No, thank you",
+      "newSnapshot": "New snapshot",
+      "table": {
+        "creationDateTime": "Creation date and time",
+        "actions": "Actions"
+      }
+    },
+    "maxSupport": "Maximum project support!",
     "system": {
       "ignoreCertificateErrors": "Ignore certificate errors",
       "useOperaProxy": "Use Opera Proxy",
@@ -84,7 +126,19 @@
       "showConfigFile": "Show config file location",
       "minimizeApp": "Minimize application",
       "closeApp": "Close application",
-      "resetCache": "Reset application cache and settings"
+      "resetCache": "Reset application cache and settings",
+      "confirmExit": "Are you sure you want to exit the application?",
+      "confirmResetCache": "Are you sure you want to reset the application cache and settings?",
+      "shortcuts": {
+        "closeMac": "⌘Q",
+        "closeWin": "Alt + Q",
+        "reloadMac": "⌘⇧R",
+        "reloadWin": "Ctrl + Shift + R",
+        "minimizeMac": "⌘M",
+        "minimizeWin": "Ctrl + M",
+        "fullscreenMac": "⌃⌘F",
+        "fullscreenWin": "Ctrl + F"
+      }
     },
     "app": {
       "anilibria": "Anilibria",
@@ -123,7 +177,9 @@
       "genresSubtitle": "You can filter the list of releases by the specified genres",
       "period": "Period",
       "periodSubtitle": "You can filter the list of releases by year of release",
-      "sortSubtitle": "You can sort the list of releases by popularity or newest"
+      "sortSubtitle": "You can sort the list of releases by popularity or newest",
+      "genresError": "Error loading genre filters",
+      "yearsError": "Error loading year filters"
     }
   },
   "catalogView": {
@@ -144,18 +200,42 @@
       "sort": "Sort",
       "sortPlaceholder": "Sort",
       "grouping": "Grouping",
-      "groupingPlaceholder": "Grouping"
+      "groupingPlaceholder": "Grouping",
+      "watchedReleasesDescription": "You can show or hide already watched releases",
+      "onlyCompletedDescription": "You can show or hide unfinished releases",
+      "sortDescription": "You can configure the sorting method for releases",
+      "groupingDescription": "You can configure the grouping method for releases",
+      "sortOptions": {
+        "byName": "By name",
+        "byPopularity": "By popularity",
+        "byDateAdded": "By date added to favorites",
+        "byDateUpdated": "By release update date"
+      },
+      "groupingOptions": {
+        "none": "No grouping",
+        "byYear": "By year"
+      }
+    },
+    "error": {
+      "loadErrorTitle": "Error loading favorite releases"
     }
   },
   "favoritesView": {
     "title": "Favorite Releases",
     "subtitle": "A list of your favorite releases",
-    "metaTitle": "Favorites"
+    "metaTitle": "Favorites",
+    "authRequired": "Authorization is required to view"
   },
   "release": {
     "related": "Related",
     "torrents": {
       "series": "Series"
+    },
+    "episodes": {
+      "markAsWatched": "Mark episode as watched",
+      "unmarkAsWatched": "Unmark as watched",
+      "markAllAsWatched": "Mark all episodes as watched",
+      "unmarkAllAsWatched": "Unmark all as watched"
     }
   },
   "player": {
@@ -170,10 +250,29 @@
     "torrent": {
       "title": "Torrent",
       "subtitle": "Data on the torrent being played and connection",
-      "notice": "A small number of seeders and leechers can negatively affect download speeds and lead to playback buffering"
+      "notice": "A small number of seeders and leechers can negatively affect download speeds and lead to playback buffering",
+      "torrentName": "Torrent name",
+      "creationDate": "Torrent creation date",
+      "seeders": "Seeders",
+      "leechers": "Leechers",
+      "playingFile": "Playing file",
+      "fileSize": "File size",
+      "downloadSpeed": "Download speed",
+      "uploadSpeed": "Upload speed",
+      "progress": "Progress",
+      "sourceError": "Could not determine playback source",
+      "connectionError": "Could not connect to playback source"
     },
     "episodes": {
-      "title": "Episodes"
+      "title": "Episodes",
+      "listSubtitle": "List of all release episodes"
+    },
+    "noDataToPlay": "No data for playback",
+    "skip": {
+      "markSkipped": "Mark skipped"
+    },
+    "status": {
+      "paused": "PAUSED"
     }
   },
   "toolbar": {
@@ -182,7 +281,9 @@
     "searchPlaceholder": "Search release ...",
     "releases": "Releases",
     "catalog": "Catalog",
-    "favorites": "Favorites"
+    "favorites": "Favorites",
+    "updateLatestReleases": "Update latest releases",
+    "updatedAt": "Updated at {{datetime}}"
   },
   "account": {
     "loginTooltip": "Authorization",
@@ -190,7 +291,19 @@
     "login": {
       "title": "Authorization",
       "emailOrLoginPlaceholder": "Email or login",
-      "passwordPlaceholder": "Password"
+      "passwordPlaceholder": "Password",
+      "prompt": "Enter the details you used to register on the Anilibria website",
+      "loginWithVK": "Login with VK",
+      "userNotRegistered": "User not registered"
+    },
+    "stats": {
+      "inFavorites": "In favorites",
+      "watched": "Watched",
+      "timeSpent": "Time spent watching"
+    },
+    "errors": {
+      "sessionUndefined": "Session not defined",
+      "authError": "Authorization error: {{message}}"
     }
   },
   "releasesView": {
@@ -203,6 +316,7 @@
       },
       "error": {
         "loadErrorTitle": "Error loading releases",
+        "searchErrorTitle": "Error searching releases",
         "connectionOrApiProblem": "Perhaps the problem is related to your connection or the server API",
         "tryChangingConnectionOrLater": "Try changing your connection settings or try again later",
         "retry": "Retry"
@@ -232,7 +346,8 @@
     "comments": "Comments",
     "torrents": "Torrents",
     "metaTitle": "Release [{releaseId}]: {releaseName}",
-    "relatedDataError": "Error loading related data"
+    "relatedDataError": "Error loading related data",
+    "loadError": "Error loading release"
   },
   "releaseTorrents": {
     "useMagnetLinks": "Use magnet links",
@@ -255,5 +370,12 @@
   "playerInterface": {
     "autoSkipOpeningOff": "Auto-skip opening disabled",
     "autoSkipOpeningOn": "Auto-skip opening enabled"
+  },
+  "webtorrent": {
+    "parseError": "Error parsing torrent file",
+    "fileNotFound": "File with this sequence number not found",
+    "initError": "Error initializing torrent file",
+    "notFound": "Torrent not found",
+    "stopError": "Error stopping and destroying torrent file"
   }
 }

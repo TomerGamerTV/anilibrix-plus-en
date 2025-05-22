@@ -220,8 +220,8 @@
     </v-card>-->
 
     <div v-show="_isAuthorized" class="pa-4 caption grey--text">
-      <div class="body-1">Снапшоты</div>
-      <div>Вы можете создавать резервные копии данных приложения привязанные к вашему аккаунту анилибрии</div>
+      <div class="body-1">{{ $t('settings.snapshots.title') }}</div>
+      <div>{{ $t('settings.snapshots.description') }}</div>
     </div>
 
     <v-card v-show="_isAuthorized">
@@ -229,7 +229,7 @@
         <template>
           <v-list-item @click="snapshots">
             <v-list-item-content>
-              <v-list-item-title v-text="'Список снапшотов'"/>
+              <v-list-item-title v-text="$t('settings.snapshots.listTitle')"/>
             </v-list-item-content>
           </v-list-item>
         </template>

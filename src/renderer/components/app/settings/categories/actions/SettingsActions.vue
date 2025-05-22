@@ -111,10 +111,10 @@ export default {
      */
     shortcuts () {
       return {
-        'close': process.platform === 'darwin' ? '⌘Q' : 'Alt + Q',
-        'reload': process.platform === 'darwin' ? '⌘⇧R' : 'Ctrl + Shift + R',
-        'minimize': process.platform === 'darwin' ? '⌘M' : 'Ctrl + M',
-        'fullscreen': process.platform === 'darwin' ? '⌃⌘F' : 'Ctrl + F',
+        'close': process.platform === 'darwin' ? this.$t('settings.actions.shortcuts.closeMac') : this.$t('settings.actions.shortcuts.closeWin'),
+        'reload': process.platform === 'darwin' ? this.$t('settings.actions.shortcuts.reloadMac') : this.$t('settings.actions.shortcuts.reloadWin'),
+        'minimize': process.platform === 'darwin' ? this.$t('settings.actions.shortcuts.minimizeMac') : this.$t('settings.actions.shortcuts.minimizeWin'),
+        'fullscreen': process.platform === 'darwin' ? this.$t('settings.actions.shortcuts.fullscreenMac') : this.$t('settings.actions.shortcuts.fullscreenWin'),
       }
     }
 

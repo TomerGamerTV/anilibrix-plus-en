@@ -128,16 +128,16 @@ export default {
     statistics () {
       return [
         {
-          title: 'В избранном',
-          value: this.favorites ? stringsPluralize(this.favorites, ['релиз', 'релиза', 'релизов']) : 'Нет данных',
+          title: this.$t('account.stats.inFavorites'),
+          value: this.favorites ? this.$tc('common.releasePlural', this.favorites) : this.$t('common.noData'),
         },
         {
-          title: 'Просмотрено',
-          value: this.episodes ? stringsPluralize(this.episodes, ['эпизод', 'эпизода', 'эпизодов']) : 'Нет данных',
+          title: this.$t('account.stats.watched'),
+          value: this.episodes ? this.$tc('releaseProgress.episodePlural', this.episodes) : this.$t('common.noData'),
         },
         {
-          title: 'Потрачено на просмотр',
-          value: this.hours > 0 ? stringsPluralize(this.hours, ['час', 'часа', 'часов']) : 'Нет данных',
+          title: this.$t('account.stats.timeSpent'),
+          value: this.hours > 0 ? this.$tc('common.hourPlural', this.hours) : this.$t('common.noData'),
         }
       ]
     }

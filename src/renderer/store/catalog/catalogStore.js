@@ -200,7 +200,7 @@ export default {
       } catch (error) {
         // Show app error
         // Throw error
-        showAppError('Произошла ошибка при загрузке релизов')
+        showAppError(this.$t('releases.error.loadErrorTitle'))
       } finally {
         commit(SET_CATALOG_LOADING, false)
       }
@@ -230,7 +230,7 @@ export default {
       } catch (error) {
         // Show app error
         // Throw error
-        showAppError('Произошла ошибка при загрузке фильтров по жанрам')
+        showAppError(this.$t('catalog.filters.genresError'))
       } finally {
         commit(SET_FILTER_LOADING, {
           filter,
@@ -263,7 +263,7 @@ export default {
       } catch (error) {
         // Show app error
         // Throw error
-        showAppError('Произошла ошибка при загрузке фильтров по годам')
+        showAppError(this.$t('catalog.filters.yearsError'))
       } finally {
         commit(SET_FILTER_LOADING, {
           filter,
