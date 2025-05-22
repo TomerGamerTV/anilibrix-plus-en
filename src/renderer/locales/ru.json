@@ -1,7 +1,8 @@
 {
   "settings": {
     "title": "Настройки приложения",
-    "languageLabel": "Язык"
+    "languageLabel": "Язык",
+    "tooltip": "Настройки приложения"
   },
   "toolbar": {
     "releases": "Релизы",
@@ -24,5 +25,88 @@
   },
   "downloads": {
     "episodeDetails": "Эпизод: {episodeId} • {quality}p"
+  },
+  "releaseProgress": {
+    "allEpisodesWatched": "Просмотрены все эпизоды",
+    "allEpisodesWatchedDense": "Все эпизоды",
+    "noEpisodesWatched": "Не просмотрено ни одного эпизода",
+    "noEpisodesWatchedDense": "Ни одного эпизода",
+    "watchedOutOfTotal": "Просмотрено {watchedString} из {totalEpisodes}",
+    "watchedOutOfTotalDense": "{watchedString} из {totalEpisodes}"
+  },
+  "comments": {
+    "loadError": "Произошла ошибка при загрузке комментариев",
+    "certificateError": "Произошла ошибка при загрузке комментариев. Ошибка с сертификатом"
+  },
+  "torrents": {
+    "useMagnetLinks": "Использовать magnet ссылки",
+    "seriesPrefix": "Серия {seriesNumber}"
+  },
+  "episodesToolbar": {
+    "markAllAsWatched": "Отметить все серии как просмотренные",
+    "unmarkAllAsWatched": "Снять все отметки о просмотре"
+  },
+  "episodeActions": {
+    "markAsWatched": "Отметить серию как просмотренную",
+    "unmarkAsWatched": "Снять отметку о просмотре"
+  },
+  "episodeQuality": {
+    "torrent": "Торрент"
+  },
+  "releaseCard": {
+    "startWatching": "Начать смотреть",
+    "continueWatchingFromEpisode": "Смотреть с {episodeNumber} серии"
+  },
+  "teamRoles": {
+    "voice": "Озвучили",
+    "translator": "Перевели",
+    "decor": "Оформили",
+    "subtitles": "Субтитры",
+    "timing": "Таймили"
+  },
+  "notifications": {
+    "recentForWeek": "Последние уведомления за неделю",
+    "emptyState": {
+      "noNotifications": "Пока что здесь нет ни одного уведомления",
+      "somethingInterestingSoon": "Возможно скоро выйдет что-то интересное ..."
+    },
+    "item": {
+      "episodeReleased": "Вышла {episodeNumber} серия"
+    }
+  },
+  "account": {
+    "loginTooltip": "Авторизация",
+    "profileIdLabel": "ID: {id}",
+    "statistics": {
+      "inFavorites": "В избранном",
+      "watched": "Просмотрено",
+      "timeSpentWatching": "Потрачено на просмотр",
+      "noData": "Нет данных",
+      "releasesValue": "{value}",
+      "episodesValue": "{value}",
+      "hoursValue": "{value}"
+    },
+    "logoutButton": "Выход"
+  },
+  "update": {
+    "refreshReleasesTooltipTitle": "Обновить последние релизы",
+    "updatedAtTooltipCaption": "Обновлено в {datetime}"
+  },
+  "search": {
+    "placeholder": "Поиск релиза ..."
+  },
+  "credentials": {
+    "unofficialBuild": "Не официальная сборка {appVersion}",
+    "aboutApp": "О приложении",
+    "viewingDisclaimer": "Весь материал в приложении представлен исключительно для домашнего ознакомительного просмотра.",
+    "debugTools": "Инструменты отладки"
+  },
+  "devtools": {
+    "title": "Инструменты отладки",
+    "description": "Список инструментов для отладки приложения. Предназначены, в основном, для разработчиков",
+    "appConsole": "Консоль приложения",
+    "torrentServerConsole": "Консоль торрент-сервера",
+    "addNotificationToStore": "Добавить уведомление в хранилище",
+    "showStoreDataInConsole": "Показать данные хранилища в консоли"
   }
 }

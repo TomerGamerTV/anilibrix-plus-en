@@ -11,7 +11,7 @@
           v-model="_torrentType"
           true-value="magnet"
           false-value="file"
-          label="Использовать magnet ссылки"
+          :label="$t('torrents.useMagnetLinks')"
         ></v-checkbox>
       </v-list-item>
 
@@ -21,7 +21,7 @@
         <v-list-item two-line ref="container" @click="download(torrent)" >
           <v-list-item-content>
             <v-list-item-title class="d-flex justify-space-between">
-              <span>Серия {{ torrent.series }}</span>
+              <span>{{ $t('torrents.seriesPrefix', { seriesNumber: torrent.series }) }}</span>
               <span>{{ formatTimestamp(torrent.ctime) }}</span>
             </v-list-item-title>
             <v-list-item-subtitle class="d-flex justify-space-between caption grey--text text--darken-1">

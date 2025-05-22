@@ -68,13 +68,13 @@ export default {
       return [
         {
           icon: 'mdi-check',
-          title: 'Отметить серию как просмотренную',
+          title: this.$t('episodeActions.markAsWatched'),
           action: this.setWatched,
           visible: true,
         },
         {
           icon: 'mdi-close',
-          title: 'Снять отметку о просмотре',
+          title: this.$t('episodeActions.unmarkAsWatched'),
           action: this.removeWatched,
           visible: true,
         }

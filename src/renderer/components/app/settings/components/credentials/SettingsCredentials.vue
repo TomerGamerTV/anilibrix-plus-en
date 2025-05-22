@@ -3,12 +3,12 @@
 
     <v-card-text class="caption">
       <v-layout class="with-divider">
-        <div>Не официальная сборка {{ app.version }}</div>
-        <a href="#" @click.prevent="sendAppAboutEvent">О приложении</a>
+        <div>{{ $t('credentials.unofficialBuild', { appVersion: app.version }) }}</div>
+        <a href="#" @click.prevent="sendAppAboutEvent">{{ $t('credentials.aboutApp') }}</a>
       </v-layout>
-      <div>Весь материал в приложении представлен исключительно для домашнего ознакомительного просмотра.</div>
+      <div>{{ $t('credentials.viewingDisclaimer') }}</div>
       <div>
-        <a href="#" @click.prevent="toggleDevtools">Инструменты отладки</a>
+        <a href="#" @click.prevent="toggleDevtools">{{ $t('credentials.debugTools') }}</a>
       </div>
     </v-card-text>
 

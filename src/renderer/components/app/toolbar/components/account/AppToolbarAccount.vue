@@ -7,7 +7,7 @@
       <v-btn icon id="toolbar__login" @click="toLogin">
         <v-icon>mdi-account</v-icon>
       </v-btn>
-      <v-tooltip left key="login" activator="#toolbar__login">Авторизация</v-tooltip>
+      <v-tooltip left key="login" activator="#toolbar__login">{{ $t('account.loginTooltip') }}</v-tooltip>
     </template>
 
 
@@ -39,7 +39,7 @@
             </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title v-text="_profile.login"/>
-              <v-list-item-subtitle>ID: {{ _profile.id }}</v-list-item-subtitle>
+              <v-list-item-subtitle>{{ $t('account.profileIdLabel', { id: _profile.id }) }}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
           <v-divider/>
@@ -58,7 +58,7 @@
 
           <!-- Logout -->
           <v-list-item @click="logout">
-            <v-list-item-subtitle>Выход</v-list-item-subtitle>
+            <v-list-item-subtitle>{{ $t('account.logoutButton') }}</v-list-item-subtitle>
           </v-list-item>
         </v-list>
 
@@ -128,16 +128,16 @@ export default {
     statistics () {
       return [
         {
-          title: 'В избранном',
-          value: this.favorites ? stringsPluralize(this.favorites, ['релиз', 'релиза', 'релизов']) : 'Нет данных',
+          title: this.$t('account.statistics.inFavorites'),
+          value: this.favorites ? this.$t('account.statistics.releasesValue', { value: stringsPluralize(this.favorites, ['релиз', 'релиза', 'релизов']) }) : this.$t('account.statistics.noData'),
         },
         {
-          title: 'Просмотрено',
-          value: this.episodes ? stringsPluralize(this.episodes, ['эпизод', 'эпизода', 'эпизодов']) : 'Нет данных',
+          title: this.$t('account.statistics.watched'),
+          value: this.episodes ? this.$t('account.statistics.episodesValue', { value: stringsPluralize(this.episodes, ['эпизод', 'эпизода', 'эпизодов']) }) : this.$t('account.statistics.noData'),
         },
         {
-          title: 'Потрачено на просмотр',
-          value: this.hours > 0 ? stringsPluralize(this.hours, ['час', 'часа', 'часов']) : 'Нет данных',
+          title: this.$t('account.statistics.timeSpentWatching'),
+          value: this.hours > 0 ? this.$t('account.statistics.hoursValue', { value: stringsPluralize(this.hours, ['час', 'часа', 'часов']) }) : this.$t('account.statistics.noData'),
         }
       ]
     }

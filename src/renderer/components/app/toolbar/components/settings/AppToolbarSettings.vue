@@ -4,7 +4,7 @@
       <v-icon>mdi-settings</v-icon>
     </v-btn>
 
-    <v-tooltip left activator="#toolbar__settings">Настройки приложения</v-tooltip>
+    <v-tooltip left activator="#toolbar__settings">{{ $t('settings.tooltip') }}</v-tooltip>
   </div>
 </template>
 

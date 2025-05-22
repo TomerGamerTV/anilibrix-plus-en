@@ -6,14 +6,14 @@
     >
       <v-card>
         <v-card-title>
-          <span class="text-h5">Список снапшотов</span>
+          <span class="text-h5">{{ $t('snapshotDialogs.list.title') }}</span>
         </v-card-title>
         <v-card-text>
           <v-data-table
             :loading="loading"
             fixed-header
             height="300px"
-            :headers="headers"
+            :headers="translatedHeaders"
             :items="snapshotsList"
             :items-per-page="10"
             class="elevation-1"
@@ -29,7 +29,7 @@
                   class="mb-2"
                   @click="createSnapshot"
                 >
-                  Новый снапшот
+                  {{ $t('snapshotDialogs.list.newSnapshotButton') }}
                 </v-btn>
               </v-toolbar>
             </template>
@@ -68,7 +68,7 @@
             text
             @click="visible = false"
           >
-            Закрыть
+            {{ $t('buttons.close') }}
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -104,27 +104,29 @@ export default {
     return {
       visible: false,
       loading: false,
-      headers: [
+      snapshotsList: []
+    }
+  },
+  computed: {
+    translatedHeaders() {
+      return [
         {
-          text: 'ID',
+          text: this.$t('snapshotDialogs.list.headerId'),
           align: 'start',
           sortable: false,
           value: 'id',
         },
         {
-          text: 'Дата и время создания',
+          text: this.$t('snapshotDialogs.list.headerDate'),
           value: 'date'
         },
         {
-          text: 'Действия',
+          text: this.$t('snapshotDialogs.list.headerActions'),
           sortable: false,
           value: 'actions'
         },
-      ],
-      snapshotsList: []
-    }
-  },
-  computed: {
+      ]
+    },
     confirmSnapshotRestore () {
       return confirmSnapshotRestore
     },

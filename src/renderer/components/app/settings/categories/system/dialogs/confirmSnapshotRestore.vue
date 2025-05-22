@@ -6,11 +6,10 @@
   >
     <v-card>
       <v-card-title className="text-h5">
-        ПРЕДУПРЕЖДЕНИЕ
+        {{ $t('dialogs.warningTitle') }}
       </v-card-title>
       <v-card-text>
-        Вы действительно хотите восстановить данные из снапшота?
-        Данное действие нельзя отменить, текущие данные будут заменены данным из снапшота
+        {{ $t('snapshotDialogs.restore.confirmText') }}
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -20,7 +19,7 @@
           text
           v-on:click="restoreSnapshot"
         >
-          Да
+          {{ $t('buttons.yes') }}
         </v-btn>
         <v-btn
           :loading="loading"
@@ -28,7 +27,7 @@
           text
           v-on:click="visible = false"
         >
-          Отмена
+          {{ $t('buttons.cancel') }}
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -136,7 +135,7 @@ export default {
             if (autoUpdateReleases !== undefined) this._setUpdates(autoUpdateReleases)
             if (autoUpdateInterval !== undefined) this._setUpdatesTimeout(autoUpdateInterval)
 
-            this.$toasted.show("Данные из снапшота применены", {
+            this.$toasted.show(this.$t('snapshotDialogs.restore.successMessage'), {
               type: 'success',
               position: "top-center",
               duration : 2000

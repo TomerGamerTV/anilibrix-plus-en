@@ -13,20 +13,20 @@
 
         <!-- Complete All Episodes -->
         <span v-if="isComplete">
-          <span v-if="!dense">Просмотрены все эпизоды</span>
-          <span v-else>Все эпизоды</span>
+          <span v-if="!dense">{{ $t('releaseProgress.allEpisodesWatched') }}</span>
+          <span v-else>{{ $t('releaseProgress.allEpisodesWatchedDense') }}</span>
         </span>
 
         <!-- Not seen episodes -->
         <span v-else-if="isUnseen">
-          <span v-if="!dense">Не просмотрено ни одного эпизода</span>
-          <span v-else>Ни одного эпизода</span>
+          <span v-if="!dense">{{ $t('releaseProgress.noEpisodesWatched') }}</span>
+          <span v-else>{{ $t('releaseProgress.noEpisodesWatchedDense') }}</span>
         </span>
 
         <!-- Episodes Progress -->
         <span v-else>
-          <span v-if="!dense">Просмотрено {{ watched }} из {{ episodes.length }}</span>
-          <span v-else>{{ watched }} из {{ episodes.length }}</span>
+          <span v-if="!dense">{{ $t('releaseProgress.watchedOutOfTotal', { watchedString: watched, totalEpisodes: episodes.length }) }}</span>
+          <span v-else>{{ $t('releaseProgress.watchedOutOfTotalDense', { watchedString: watched, totalEpisodes: episodes.length }) }}</span>
         </span>
 
       </div>

@@ -1,7 +1,8 @@
 {
   "settings": {
     "title": "Application Settings",
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "tooltip": "Application settings"
   },
   "toolbar": {
     "releases": "Releases",
@@ -20,9 +21,227 @@
     "userNotRegisteredError": "User not registered"
   },
   "buttons": {
-    "back": "Back"
+    "back": "Back",
+    "yes": "Yes",
+    "cancel": "Cancel",
+    "agree": "I agree",
+    "noThanks": "No, thanks",
+    "close": "Close",
+    "exit": "Exit",
+    "reset": "Reset"
   },
   "downloads": {
     "episodeDetails": "Episode: {episodeId} • {quality}p"
+  },
+  "releaseProgress": {
+    "allEpisodesWatched": "All episodes watched",
+    "allEpisodesWatchedDense": "All episodes",
+    "noEpisodesWatched": "No episodes watched",
+    "noEpisodesWatchedDense": "No episodes",
+    "watchedOutOfTotal": "Watched {watchedString} of {totalEpisodes}",
+    "watchedOutOfTotalDense": "{watchedString} of {totalEpisodes}"
+  },
+  "comments": {
+    "loadError": "An error occurred while loading comments",
+    "certificateError": "An error occurred while loading comments. Certificate error"
+  },
+  "torrents": {
+    "useMagnetLinks": "Use magnet links",
+    "seriesPrefix": "Series {seriesNumber}"
+  },
+  "episodesToolbar": {
+    "markAllAsWatched": "Mark all episodes as watched",
+    "unmarkAllAsWatched": "Unmark all episodes as watched"
+  },
+  "episodeActions": {
+    "markAsWatched": "Mark episode as watched",
+    "unmarkAsWatched": "Unmark episode as watched"
+  },
+  "episodeQuality": {
+    "torrent": "Torrent"
+  },
+  "releaseCard": {
+    "startWatching": "Start Watching",
+    "continueWatchingFromEpisode": "Continue from episode {episodeNumber}"
+  },
+  "teamRoles": {
+    "voice": "Voice",
+    "translator": "Translation",
+    "decor": "Design",
+    "subtitles": "Subtitles",
+    "timing": "Timing"
+  },
+  "notifications": {
+    "recentForWeek": "Recent notifications for the week",
+    "emptyState": {
+      "noNotifications": "No notifications here yet",
+      "somethingInterestingSoon": "Maybe something interesting will come out soon..."
+    },
+    "item": {
+      "episodeReleased": "Episode {episodeNumber} released"
+    }
+  },
+  "account": {
+    "loginTooltip": "Login",
+    "profileIdLabel": "ID: {id}",
+    "statistics": {
+      "inFavorites": "In favorites",
+      "watched": "Watched",
+      "timeSpentWatching": "Time spent watching",
+      "noData": "No data",
+      "releasesValue": "{value}",
+      "episodesValue": "{value}",
+      "hoursValue": "{value}"
+    },
+    "logoutButton": "Logout"
+  },
+  "update": {
+    "refreshReleasesTooltipTitle": "Refresh latest releases",
+    "updatedAtTooltipCaption": "Updated at {datetime}"
+  },
+  "search": {
+    "placeholder": "Search release..."
+  },
+  "credentials": {
+    "unofficialBuild": "Unofficial build {appVersion}",
+    "aboutApp": "About application",
+    "viewingDisclaimer": "All material in the application is provided solely for home viewing.",
+    "debugTools": "Debug tools"
+  },
+  "devtools": {
+    "title": "Debug Tools",
+    "description": "List of tools for debugging the application. Primarily intended for developers.",
+    "appConsole": "Application console",
+    "torrentServerConsole": "Torrent server console",
+    "addNotificationToStore": "Add notification to store",
+    "showStoreDataInConsole": "Show store data in console"
+  },
+  "playerSettings": {
+    "title": "Playback Settings",
+    "description": "In this section, you can configure torrent playback and other playback settings.",
+    "torrents": {
+      "title": "Torrents",
+      "description1": "You can connect torrents, which will automatically be linked to release episodes and available for viewing.",
+      "description2": "Torrents do not require a third-party player or client and are available online in the release playback quality selection menu.",
+      "enableTorrents": "Play torrents",
+      "warning": "Using torrents requires more connection and parsing time, which can negatively affect data loading speed for releases, especially when using a proxy server."
+    },
+    "autoplay": {
+      "enable": "Autoplay next episode",
+      "description": "After an episode ends, the player will automatically start playing the next episode in the release, if available."
+    },
+    "buffer": {
+      "title": "Video Buffer Size",
+      "descriptionDefault": "Video preload buffer size, default is 5 minutes.",
+      "label": "Buffer size in seconds",
+      "suffixSeconds": "sec",
+      "descriptionHint": "Specifies the buffer size that the player keeps in memory and preloads video during viewing."
+    },
+    "autoSkipOpening": {
+      "enable": "Automatic opening skip",
+      "description": "If opening skip markers are available, it will be skipped automatically.",
+      "hotkeyTitle": "Hotkey for enabling/disabling auto skip"
+    },
+    "hotkey": {
+      "placeholder": "Press key combination here"
+    },
+    "skipButton": {
+      "enable": "Opening skip button",
+      "description1": "An additional button will appear in the player interface that will fast forward the player by the specified number of seconds.",
+      "description2": "This button does not guarantee correct opening skipping.",
+      "hotkeyTitle": "Hotkey for opening skip button"
+    },
+    "skipTime": {
+      "description": "You can specify how many seconds to skip for the opening.",
+      "label": "Number of seconds to skip opening"
+    }
+  },
+  "dialogs": {
+    "warningTitle": "WARNING"
+  },
+  "snapshotDialogs": {
+    "create": {
+      "title": "Create Snapshot",
+      "confirmText": "Are you sure you want to create a snapshot?"
+    },
+    "remove": {
+      "confirmText": "Are you sure you want to delete the snapshot?"
+    },
+    "restore": {
+      "confirmText": "Are you sure you want to restore data from the snapshot? This action cannot be undone, current data will be replaced with data from the snapshot.",
+      "successMessage": "Data from snapshot applied"
+    },
+    "consent": {
+      "dataTransferConsent": "Consent is required to transfer data (session identifier) to a third-party server to work with snapshots.",
+      "passwordDisclaimer": "<b>Account password is not disclosed or transferred in any form</b>"
+    },
+    "list": {
+      "title": "Snapshot List",
+      "headerId": "ID",
+      "headerDate": "Creation Date & Time",
+      "headerActions": "Actions",
+      "newSnapshotButton": "New Snapshot"
+    }
+  },
+  "systemSettings": {
+    "title": "Application Settings",
+    "description": "In this section, you can configure automatic release updates, system notifications, and other application parameters.",
+    "moveControlButtonsRight": "Move control buttons to the right",
+    "moveControlButtonsRightDescription": "Moves window control buttons (minimize, close, maximize) to the right.",
+    "filterNotificationsByFavorites": "Filter notifications by favorites",
+    "filterNotificationsByFavoritesDescription": "Enables notifications only for releases in your favorites.",
+    "ignoreCertificateErrors": "Ignore certificate errors",
+    "ignoreCertificateErrorsDescription": "Ignore trusted certificate verification.",
+    "useOperaProxy": "Use Opera Proxy",
+    "proxyServerLabel": "Proxy Server",
+    "proxyDescription1": "Proxy for connecting to static and API servers. HTTP and HTTPS are supported.",
+    "proxyDescription2RestartNote": "<b>After changing the access point, it is recommended to restart the application.</b>",
+    "apiEndpointLabel": "API Endpoint",
+    "staticEndpointLabel": "Static Server Endpoint",
+    "endpointDescription1": "You can use the main domain if it is not blocked by your provider, or use additional domains.",
+    "endpointDescription2": "You can enter your own API and static server endpoint in the respective fields.",
+    "endpointRestartNote": "<b>After changing the access point, it is recommended to restart the application.</b>",
+    "discordRichPresence": "Discord Rich Presence",
+    "discordRichPresenceDescription": "The application will display information about the currently viewed release in Discord Rich Presence.",
+    "showSystemNotifications": "Show system notifications",
+    "showSystemNotificationsDescription": "If the application detects an updated release when loading the latest releases, it will show a system notification about the new episode.",
+    "autoUpdateReleases": "Automatic release updates",
+    "autoUpdateReleasesDescription": "The application will update the latest releases in the background, even if it is minimized.",
+    "updateIntervalDescription": "You can specify how often the application will update releases in the background.",
+    "updateIntervalLabel": "Release update interval",
+    "updateIntervalSuffixMinutes": "min",
+    "snapshots": {
+      "title": "Snapshots",
+      "description": "You can create backups of application data linked to your Anilibria account."
+    }
+  },
+  "exitDialog": {
+    "title": "Exit",
+    "confirmText": "Are you sure you want to exit the application?"
+  },
+  "cacheDialog": {
+    "title": "Application Cache",
+    "confirmText": "Are you sure you want to reset the cache and application settings?"
+  },
+  "actionsSettings": {
+    "title": "System Commands",
+    "description": "Some useful commands for managing the application.",
+    "actions": {
+      "reloadApp": "Reload application",
+      "showConfigFile": "Show config file location",
+      "minimizeApp": "Minimize application",
+      "closeApp": "Close application",
+      "resetCacheAndSettings": "Reset cache and application settings"
+    }
+  },
+  "appSettings": {
+    "links": {
+      "anilibria": "Anilibria",
+      "supportProject": "Support the project",
+      "supportProjectValue": "Yandex.Money, QIWI, PayPal",
+      "unofficialTelegramChannel": "Unofficial releases Telegram channel",
+      "telegramChannel": "Telegram channel",
+      "sourceCode": "Source code"
+    }
   }
 }

@@ -2,12 +2,12 @@
   <v-overlay v-if="visible" absolute opacity=".85">
     <v-dialog v-bind="{attach}" v-model="visible" hide-overlay>
       <v-card>
-        <v-card-title>Выход</v-card-title>
-        <v-card-subtitle class="pt-2 pb-0">Вы действительно хотите выйти из приложения?</v-card-subtitle>
+        <v-card-title>{{ $t('exitDialog.title') }}</v-card-title>
+        <v-card-subtitle class="pt-2 pb-0">{{ $t('exitDialog.confirmText') }}</v-card-subtitle>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn v-bind="{loading}" text color="red" @click="exitApp">Выйти</v-btn>
-          <v-btn v-bind="{loading}" text @click="visible = false">Отмена</v-btn>
+          <v-btn v-bind="{loading}" text color="red" @click="exitApp">{{ $t('buttons.exit') }}</v-btn>
+          <v-btn v-bind="{loading}" text @click="visible = false">{{ $t('buttons.cancel') }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

@@ -40,7 +40,7 @@ export default {
         fhd ? '1080' : null,
         hd ? '720' : null,
         sd ? '480' : null,
-        torrent ? 'Торрент' : null,
+        torrent ? this.$t('episodeQuality.torrent') : null,
       ]
         .filter(type => type)
         .join(' • ')
