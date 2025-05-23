@@ -39,7 +39,13 @@
     "app": {
       "unofficialBuild": "Unofficial build {{version}}",
       "aboutApp": "About application",
-      "disclaimer": "All material in the application is provided for informational home viewing only."
+      "disclaimer": "All material in the application is provided for informational home viewing only.",
+      "anilibria": "Anilibria",
+      "supportProject": "Support project",
+      "paymentMethods": "Yandex.Money, QIWI, PayPal",
+      "unofficialTelegram": "Unofficial releases Telegram channel",
+      "telegramChannel": "Telegram channel",
+      "sourceCode": "Source code"
     },
     "appSettingsTooltip": "Application settings",
     "player": {
@@ -140,14 +146,7 @@
         "fullscreenWin": "Ctrl + F"
       }
     },
-    "app": {
-      "anilibria": "Anilibria",
-      "supportProject": "Support project",
-      "paymentMethods": "Yandex.Money, QIWI, PayPal",
-      "unofficialTelegram": "Unofficial releases Telegram channel",
-      "telegramChannel": "Telegram channel",
-      "sourceCode": "Source code"
-    },
+
     "devtools": {
       "title": "Debugging tools",
       "subtitle": "List of tools for debugging the application. Intended mainly for developers",
