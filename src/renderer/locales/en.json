@@ -89,6 +89,7 @@
       "agree": "I agree",
       "disagree": "No, thank you",
       "newSnapshot": "New snapshot",
+      "close": "Close",
       "table": {
         "creationDateTime": "Creation date and time",
         "actions": "Actions"
@@ -146,7 +147,6 @@
         "fullscreenWin": "Ctrl + F"
       }
     },
-
     "devtools": {
       "title": "Debugging tools",
       "subtitle": "List of tools for debugging the application. Intended mainly for developers",
@@ -223,18 +223,33 @@
     "title": "Favorite Releases",
     "subtitle": "A list of your favorite releases",
     "metaTitle": "Favorites",
-    "authRequired": "Authorization is required to view"
+    "authRequired": "Authorization is required to view",
+    "authorization": {
+      "title": "Favorite releases",
+      "description": "List of your favorite releases",
+      "authRequired": "Authorization is required to view",
+      "loginButton": "Authorize"
+    }
   },
   "release": {
     "related": "Related",
     "torrents": {
-      "series": "Series"
+      "series": "Series",
+      "torrent": "Torrent",
+      "binaryScale": {
+        "bytes": "B",
+        "kilobytes": "KB",
+        "megabytes": "MB",
+        "gigabytes": "GB",
+        "terabytes": "TB"
+      }
     },
     "episodes": {
       "markAsWatched": "Mark episode as watched",
       "unmarkAsWatched": "Unmark as watched",
       "markAllAsWatched": "Mark all episodes as watched",
-      "unmarkAllAsWatched": "Unmark all as watched"
+      "unmarkAllAsWatched": "Unmark all as watched",
+      "defaultTitle": "Episode {{episode}}"
     }
   },
   "player": {
@@ -268,7 +283,13 @@
     },
     "noDataToPlay": "No data for playback",
     "skip": {
-      "markSkipped": "Mark skipped"
+      "markSkipped": "Mark skipped",
+      "skip": "Skip",
+      "watch": "Watch",
+      "cancel": "Cancel"
+    },
+    "next": {
+      "cancel": "Cancel"
     },
     "status": {
       "paused": "PAUSED"
@@ -359,6 +380,10 @@
     "noEpisodesShort": "No episodes",
     "watchedOutOfTotal": "Watched {watched} out of {total}",
     "watchedOutOfTotalShort": "{watched} of {total}",
+    "episodePlural": "episode | episodes | episodes"
+  },
+  "yearsView": {
+    "releasePlural": "release | releases | releases",
     "episodePlural": "episode | episodes | episodes"
   },
   "blankView": {
