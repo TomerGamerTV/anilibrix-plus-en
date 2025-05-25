@@ -5,7 +5,7 @@
     hide-details
     item-text="title"
     item-value="value"
-    placeholder="Сортировка"
+    :placeholder="$t('catalogFilters.sort.placeholder')"
     :value="_value"
     @input="_setFilterValue({filter: 'sort', value: $event})">
   </v-select>
@@ -16,22 +16,20 @@
 import { mapActions, mapState } from 'vuex'
 
 export default {
-  data () {
-    return {
-      items: [
+  computed: {
+    ...mapState('catalog', { _value: s => s.filters.sort.value }),
+    items () {
+      return [
         {
-          title: 'По новизне',
+          title: this.$t('catalogFilters.sort.byNewest'),
           value: 1
         },
         {
-          title: 'По популярности',
+          title: this.$t('catalogFilters.sort.byPopularity'),
           value: 2
         },
       ]
     }
-  },
-  computed: {
-    ...mapState('catalog', { _value: s => s.filters.sort.value })
   },
 
   methods: {

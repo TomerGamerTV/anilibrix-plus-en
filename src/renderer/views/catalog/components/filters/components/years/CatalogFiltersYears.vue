@@ -8,7 +8,7 @@
     hide-no-data
     deletable-chips
     class="filter"
-    placeholder="Года"
+    :placeholder="$t('catalogFilters.years.placeholder')"
     :value="_value"
     :items="_items"
     :loading="_loading"

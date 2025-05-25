@@ -32,18 +32,18 @@ export default {
       return [
         {
           is: Genres,
-          title: 'Жанры',
-          subtitle: 'Вы можете отфильтровать список релизов по указанным жанрам'
+          title: this.$t('catalogFilters.sections.genresTitle'),
+          subtitle: this.$t('catalogFilters.sections.genresSubtitle')
         },
         {
           is: Years,
-          title: 'Период',
-          subtitle: 'Вы можете отфильтровать список релизов по годам выпуска'
+          title: this.$t('catalogFilters.sections.yearsTitle'),
+          subtitle: this.$t('catalogFilters.sections.yearsSubtitle')
         },
         {
           is: Sort,
-          title: 'Сортировка',
-          subtitle: 'Вы можете отсортировть список релизов по популярности или новизне'
+          title: this.$t('catalogFilters.sections.sortTitle'),
+          subtitle: this.$t('catalogFilters.sections.sortSubtitle')
         },
       ]
     }

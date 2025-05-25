@@ -8,13 +8,13 @@
 
       <v-col cols="12" sm="6" align-self="center">
         <v-card flat color="transparent">
-          <v-card-title>Избранные релизы</v-card-title>
+          <v-card-title>{{ $t('favoritesAuth.title') }}</v-card-title>
           <v-card-text>
-            <div>Список ваших избранных релизов</div>
-            <div>Для просмотра необходимо авторизоваться в приложении</div>
+            <div>{{ $t('favoritesAuth.description1') }}</div>
+            <div>{{ $t('favoritesAuth.description2') }}</div>
           </v-card-text>
           <v-layout>
-            <v-btn @click="toLogin">Авторизоваться</v-btn>
+            <v-btn @click="toLogin">{{ $t('buttons.login') }}</v-btn>
           </v-layout>
         </v-card>
       </v-col>

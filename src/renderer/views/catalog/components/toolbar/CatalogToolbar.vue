@@ -5,14 +5,14 @@
     <!-- Reload -->
     <v-btn v-bind="{loading}" class="mr-2" height="48" @click="$emit('reload')">
       <v-icon small class="mr-2">mdi-refresh</v-icon>
-      <span>Обновить</span>
+      <span>{{ $t('buttons.refresh') }}</span>
     </v-btn>
 
     <!-- Settings -->
     <v-badge dot overlap offset-x="10" offset-y="10" :value="hasFilters">
       <v-btn v-bind="{loading}" height="48" @click="$emit('update:settings', !settings)">
         <v-icon small class="mr-2">mdi-filter</v-icon>
-        <span>Фильтры</span>
+        <span>{{ $t('catalogToolbar.filtersButton') }}</span>
       </v-btn>
     </v-badge>
 

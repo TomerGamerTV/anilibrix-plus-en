@@ -28,7 +28,11 @@
     "noThanks": "No, thanks",
     "close": "Close",
     "exit": "Exit",
-    "reset": "Reset"
+    "reset": "Reset",
+    "refresh": "Refresh",
+    "showMore": "Show more",
+    "retry": "Retry",
+    "login": "Login"
   },
   "downloads": {
     "episodeDetails": "Episode: {episodeId} • {quality}p"
@@ -243,5 +247,104 @@
       "telegramChannel": "Telegram channel",
       "sourceCode": "Source code"
     }
+  },
+  "catalogFilters": {
+    "sort": {
+      "placeholder": "Sort",
+      "byNewest": "By newest",
+      "byPopularity": "By popularity"
+    },
+    "years": {
+      "placeholder": "Years"
+    },
+    "genres": {
+      "placeholder": "Select genres"
+    },
+    "sections": {
+      "genresTitle": "Genres",
+      "genresSubtitle": "You can filter the list of releases by specified genres.",
+      "yearsTitle": "Period",
+      "yearsSubtitle": "You can filter the list of releases by years of issue.",
+      "sortTitle": "Sorting",
+      "sortSubtitle": "You can sort the list of releases by popularity or newness."
+    }
+  },
+  "catalogToolbar": {
+    "filtersButton": "Filters"
+  },
+  "catalogView": {
+    "title": "Release Catalog",
+    "subtitle": "You can select genres and years for a more refined list of releases.",
+    "metaTitle": "Catalog"
+  },
+  "blankView": {
+    "defaultErrorLoadingEpisode": "An error occurred while loading the episode",
+    "metaTitleVideoNotAvailable": "Video not available"
+  },
+  "releaseView": {
+    "relatedTitle": "Related",
+    "tabs": {
+      "episodes": "Episodes",
+      "comments": "Comments",
+      "torrents": "Torrents"
+    },
+    "metaTitlePrefix": "Release",
+    "errorLoadingRelated": "Error loading related data"
+  },
+  "releasesActions": {
+    "watchButton": "Watch",
+    "releaseButton": "Release"
+  },
+  "releasesError": {
+    "title": "Error loading releases",
+    "messageLine1": "Perhaps the problem is related to your connection or the API server.",
+    "messageLine2": "Try changing your connection settings or try again later."
+  },
+  "releasesView": {
+    "metaTitle": "Latest Releases"
+  },
+  "favoritesToolbar": {
+    "searchPlaceholder": "Search favorite releases...",
+    "settingsButton": "Settings"
+  },
+  "favoritesAuth": {
+    "title": "Favorite Releases",
+    "description1": "List of your favorite releases.",
+    "description2": "To view, you need to log in to the application."
+  },
+  "favoritesSettings": {
+    "watchedReleases": {
+      "title": "Watched Releases",
+      "subtitle": "You can show or hide already watched releases."
+    },
+    "onlyCompleted": {
+      "title": "Only Completed",
+      "subtitle": "You can show or hide unfinished releases."
+    },
+    "sort": {
+      "title": "Sort",
+      "subtitle": "You can customize how releases are sorted.",
+      "placeholder": "Sort by"
+    },
+    "sortOptions": {
+      "byTitle": "By title",
+      "byPopularity": "By popularity",
+      "byDateAddedToFavorites": "By date added to favorites",
+      "byReleaseUpdateDate": "By release update date"
+    },
+    "group": {
+      "title": "Grouping",
+      "subtitle": "You can customize how releases are grouped.",
+      "placeholder": "Group by"
+    },
+    "groupOptions": {
+      "noGrouping": "No grouping",
+      "byYears": "By years"
+    }
+  },
+  "favoritesView": {
+    "title": "Favorite Releases",
+    "subtitle": "List of your favorite releases.",
+    "metaTitle": "Favorites"
   }
 }

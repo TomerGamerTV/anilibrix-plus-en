@@ -3,8 +3,8 @@
 
     <!-- Header-->
     <v-card flat color="transparent">
-      <v-card-title>Каталог релизов</v-card-title>
-      <v-card-subtitle>Вы можете выбрать жанры и года для более тонкой настройки списка релизов</v-card-subtitle>
+      <v-card-title>{{ $t('catalogView.title') }}</v-card-title>
+      <v-card-subtitle>{{ $t('catalogView.subtitle') }}</v-card-subtitle>
     </v-card>
 
     <!-- Catalog Filters -->
@@ -31,7 +31,7 @@
       text
       class="grey darken-4 shrink"
       @click="loadReleases">
-      Показать еще
+      {{ $t('buttons.showMore') }}
     </v-btn>
 
   </v-layout>
@@ -50,7 +50,11 @@ import {nextTick} from "vue";
 
 export default {
   name: 'Catalog.View',
-  meta: { title: 'Каталог' },
+  metaInfo () {
+    return {
+      title: this.$t('catalogView.metaTitle')
+    }
+  },
   components: {
     Loader,
     Toolbar,
