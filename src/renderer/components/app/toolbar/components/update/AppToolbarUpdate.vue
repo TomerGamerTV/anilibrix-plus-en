@@ -3,7 +3,8 @@
     <v-tooltip left activator="#toolbar__reload">
       <div class="py-1" :style="{ lineHeight: 1 }">
         <div class="font-weight-bold">{{ $t('toolbar.refreshLatestReleases') }}</div>
-        <div class="caption">{{ $t('toolbar.updatedAt', { datetime }) }}</div>
+        <div class="caption" v-if="datetime">{{ $t('toolbar.updatedAt', { datetime }) }}</div>
+        <div class="caption" v-else>{{ $t('toolbar.refreshLatestReleases') }}</div>
       </div>
     </v-tooltip>
 
