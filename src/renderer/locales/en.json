@@ -303,7 +303,8 @@
     "catalog": "Catalog",
     "favorites": "Favorites",
     "updateLatestReleases": "Update latest releases",
-    "updatedAt": "Updated at {{datetime}}"
+    "updatedAt": "Updated at {{datetime}}",
+    "refreshLatestReleases": "Refresh latest releases"
   },
   "account": {
     "loginTooltip": "Authorization",

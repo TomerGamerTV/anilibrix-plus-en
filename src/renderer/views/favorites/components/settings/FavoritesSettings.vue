@@ -5,8 +5,8 @@
     <v-card class="mb-2">
       <v-list-item class="py-2" @click="_setSettingsShowSeen(!_show_seen)">
         <v-list-item-content>
-          <v-list-item-title>Просмотренные релизы</v-list-item-title>
-          <v-list-item-subtitle>Вы можете показать или скрыть уже просмотренные релизы</v-list-item-subtitle>
+          <v-list-item-title>{{ $t('favorites.settings.watchedReleases') }}</v-list-item-title>
+          <v-list-item-subtitle>{{ $t('favorites.settings.watchedReleasesDescription') }}</v-list-item-subtitle>
         </v-list-item-content>
         <v-list-item-action>
           <v-switch :input-value="_show_seen" @click="_setSettingsShowSeen"/>
@@ -18,8 +18,8 @@
     <v-card class="mb-2">
       <v-list-item class="py-2" @click="_setSettingsShowCompleted(!_show_completed)">
         <v-list-item-content>
-          <v-list-item-title>Только завершенные</v-list-item-title>
-          <v-list-item-subtitle>Вы можете показать или скрыть незаконченные релизы</v-list-item-subtitle>
+          <v-list-item-title>{{ $t('favorites.settings.onlyCompleted') }}</v-list-item-title>
+          <v-list-item-subtitle>{{ $t('favorites.settings.onlyCompletedDescription') }}</v-list-item-subtitle>
         </v-list-item-content>
         <v-list-item-action>
           <v-switch :input-value="_show_completed" @click="_setSettingsShowCompleted"/>
@@ -32,15 +32,15 @@
     <v-card class="mb-2">
       <v-list-item class="py-2">
         <v-list-item-content>
-          <v-list-item-title>Сортировка</v-list-item-title>
-          <v-list-item-subtitle>Вы можете настроить способ сортировки релизов</v-list-item-subtitle>
+          <v-list-item-title>{{ $t('favorites.settings.sort') }}</v-list-item-title>
+          <v-list-item-subtitle>{{ $t('favorites.settings.sortDescription') }}</v-list-item-subtitle>
           <v-select
             outlined
             hide-details
             class="mt-4"
             item-text="title"
             item-value="value"
-            placeholder="Сортировка"
+            :placeholder="$t('favorites.settings.sortPlaceholder')"
             :items="sort"
             :value="_sort"
             @input="_setSettingsSort">
@@ -54,15 +54,15 @@
     <v-card>
       <v-list-item class="py-2">
         <v-list-item-content>
-          <v-list-item-title>Группировка</v-list-item-title>
-          <v-list-item-subtitle>Вы можете настроить способ группровки релизов</v-list-item-subtitle>
+          <v-list-item-title>{{ $t('favorites.settings.grouping') }}</v-list-item-title>
+          <v-list-item-subtitle>{{ $t('favorites.settings.groupingDescription') }}</v-list-item-subtitle>
           <v-select
             outlined
             hide-details
             class="mt-4"
             item-text="title"
             item-value="value"
-            placeholder="Группировка"
+            :placeholder="$t('favorites.settings.groupingPlaceholder')"
             :items="group"
             :value="_group"
             @input="_setSettingsGroup">
@@ -80,36 +80,7 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   data () {
-    return {
-      sort: [
-        {
-          title: 'По названию',
-          value: 'title'
-        },
-        {
-          title: 'По популярности',
-          value: 'rating'
-        },
-        {
-          title: 'По дате добавления в избранное',
-          value: 'original'
-        },
-        {
-          title: 'По дате обновления релизов',
-          value: 'updates'
-        }
-      ],
-      group: [
-        {
-          title: 'Без группировки',
-          value: 'original'
-        },
-        {
-          title: 'По годам',
-          value: 'years'
-        },
-      ]
-    }
+    return {}
   },
 
   computed: {
@@ -118,7 +89,39 @@ export default {
       _group: s => s.settings.group,
       _show_seen: s => s.settings.show_seen,
       _show_completed: s => s.settings.show_completed,
-    })
+    }),
+    sort () {
+      return [
+        {
+          title: this.$t('favorites.settings.sortOptions.byName'),
+          value: 'title'
+        },
+        {
+          title: this.$t('favorites.settings.sortOptions.byPopularity'),
+          value: 'rating'
+        },
+        {
+          title: this.$t('favorites.settings.sortOptions.byDateAdded'),
+          value: 'original'
+        },
+        {
+          title: this.$t('favorites.settings.sortOptions.byDateUpdated'),
+          value: 'updates'
+        }
+      ]
+    },
+    group () {
+      return [
+        {
+          title: this.$t('favorites.settings.groupingOptions.none'),
+          value: 'original'
+        },
+        {
+          title: this.$t('favorites.settings.groupingOptions.byYear'),
+          value: 'years'
+        },
+      ]
+    }
   },
 
   methods: {
