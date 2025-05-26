@@ -49,6 +49,7 @@
     },
     "appSettingsTooltip": "Application settings",
     "player": {
+      "title": "Player",
       "playTorrents": "Play torrents",
       "autoplayNextEpisode": "Autoplay next episode",
       "autoSkipOpening": "Auto-skip opening",
