@@ -4,9 +4,9 @@
     "empty": {
       "title": "Пока что здесь нет ни одного уведомления",
       "subtitle": "Возможно скоро выйдет что-то интересное ..."
-    }
+    },
+    "newEpisodeOut": "Вышла {{episodeNumber}} серия"
   },
-  "app": {},
   "ads": {
     "metaTitle": "Реклама"
   },
@@ -15,11 +15,19 @@
     "refresh": "Обновить",
     "settings": "Настройки",
     "series": "Серии",
-    "exit": "Выход",
     "hotKeyPlaceholder": "Нажми тут сочетание клавиш",
     "seconds": "сек",
     "minutes": "мин",
-    "reset": "Сбросить"
+    "warning": "ВНИМАНИЕ",
+    "yes": "Да",
+    "cancel": "Отмена",
+    "reset": "Сбросить",
+    "noData": "Нет данных",
+    "releasePlural": "релиз | релиза | релизов",
+    "hourPlural": "час | часа | часов",
+    "requestError": "Ошибка запроса",
+    "serverError": "Ошибка сервера",
+    "close": "Закрыть"
   },
   "settings": {
     "title": "Настройки",
@@ -28,13 +36,24 @@
       "english": "English",
       "russian": "Русский"
     },
+    "app": {
+      "unofficialBuild": "Неофициальная сборка {{version}}",
+      "aboutApp": "О приложении",
+      "disclaimer": "Весь материал в приложении предоставлен исключительно для домашнего ознакомительного просмотра.",
+      "anilibria": "Анилибрия",
+      "supportProject": "Поддержать проект",
+      "paymentMethods": "Яндекс.Деньги, QIWI, PayPal",
+      "unofficialTelegram": "Неофициальный Telegram-канал релизов",
+      "telegramChannel": "Telegram-канал",
+      "sourceCode": "Исходный код"
+    },
     "appSettingsTooltip": "Настройки приложения",
     "player": {
+      "title": "Плеер",
       "playTorrents": "Воспроизводить торренты",
       "autoplayNextEpisode": "Автовоспроизведение следующего эпизода",
       "autoSkipOpening": "Автоматический пропуск опенинга",
       "skipOpeningButton": "Кнопка пропуска опенинга",
-      "downloadTorrentFiles": "Загружать торрент-файлы",
       "subtitle": "В данном разделе вы можете настроить возможность смотреть релизы, используя торренты, а также другие настройки воспроизведения",
       "torrentsTitle": "Торренты",
       "torrentsDescription1": "Вы можете подключить торренты, которые автоматически буду связаны с эпизодами релизов и доступны для просмотра.",
@@ -53,6 +72,9 @@
       "skipOpeningTimeDescription": "Вы можете указать на сколько секунд пропускать опенинг",
       "skipOpeningTimeLabel": "Количество секунд для пропуска опенинга"
     },
+    "proxy": {
+      "pacScriptError": "Ошибка разбора PAC скрипта"
+    },
     "snapshots": {
       "confirmRemove": "Вы уверены, что хотите удалить снимок?",
       "confirmRestore": "Вы уверены, что хотите восстановить данные из снимка?",
@@ -68,6 +90,7 @@
       "agree": "Я согласен",
       "disagree": "Нет, спасибо",
       "newSnapshot": "Новый снимок",
+      "close": "Закрыть",
       "table": {
         "creationDateTime": "Дата и время создания",
         "actions": "Действия"
@@ -81,8 +104,6 @@
       "showSystemNotifications": "Показывать системные уведомления",
       "autoUpdateReleases": "Автоматическое обновление релизов",
       "showAdsBeforeEpisode": "Показывать рекламу перед каждым эпизодом",
-      "clearCache": "Очистить кэш",
-      "exitApp": "Выйти из приложения",
       "title": "Настройки приложения",
       "subtitle": "В данном разделе вы можете настроить автоматическое обновление релизов, системные уведомления и другие параметры приложения",
       "moveControlsRight": "Переместить кнопки контроля вправо",
@@ -127,14 +148,6 @@
         "fullscreenWin": "Ctrl + F"
       }
     },
-    "app": {
-      "anilibria": "Анилибрия",
-      "supportProject": "Поддержать проект",
-      "paymentMethods": "Яндекс.Деньги, QIWI, PayPal",
-      "unofficialTelegram": "Telegram-канал не официальных релизов",
-      "telegramChannel": "Telegram-канал",
-      "sourceCode": "Исходный код"
-    },
     "devtools": {
       "title": "Инструменты отладки",
       "subtitle": "Список инструментов для отладки приложения. Предназначены, в основном, для разработчиков",
@@ -164,7 +177,9 @@
       "genresSubtitle": "Вы можете отфильтровать список релизов по указанным жанрам",
       "period": "Период",
       "periodSubtitle": "Вы можете отфильтровать список релизов по годам выпуска",
-      "sortSubtitle": "Вы можете отсортировть список релизов по популярности или новизне"
+      "sortSubtitle": "Вы можете отсортировть список релизов по популярности или новизне",
+      "genresError": "Ошибка загрузки фильтров жанров",
+      "yearsError": "Ошибка загрузки фильтров годов"
     }
   },
   "catalogView": {
@@ -186,9 +201,20 @@
       "sortPlaceholder": "Сортировка",
       "grouping": "Группировка",
       "groupingPlaceholder": "Группировка",
-    "showFavoriteButton": "Показывать кнопку избранного",
-    "showNotifications": "Показывать уведомления",
-    "showTorrentsInFeed": "Показывать торренты в ленте"
+      "watchedReleasesDescription": "Вы можете показать или скрыть уже просмотренные релизы",
+      "onlyCompletedDescription": "Вы можете показать или скрыть незавершенные релизы",
+      "sortDescription": "Вы можете настроить метод сортировки релизов",
+      "groupingDescription": "Вы можете настроить метод группировки релизов",
+      "sortOptions": {
+        "byName": "По имени",
+        "byPopularity": "По популярности",
+        "byDateAdded": "По дате добавления в избранное",
+        "byDateUpdated": "По дате обновления релиза"
+      },
+      "groupingOptions": {
+        "none": "Без группировки",
+        "byYear": "По году"
+      }
     },
     "error": {
       "loadErrorTitle": "Ошибка при загрузке избранных релизов"
@@ -197,12 +223,34 @@
   "favoritesView": {
     "title": "Избранные релизы",
     "subtitle": "Список ваших избранных релизов",
-    "metaTitle": "Избранное"
+    "metaTitle": "Избранное",
+    "authRequired": "Для просмотра требуется авторизация",
+    "authorization": {
+      "title": "Избранные релизы",
+      "description": "Список ваших избранных релизов",
+      "authRequired": "Для просмотра требуется авторизация",
+      "loginButton": "Авторизоваться"
+    }
   },
   "release": {
     "related": "Связанное",
     "torrents": {
-      "series": "Серия"
+      "series": "Серия",
+      "torrent": "Торрент",
+      "binaryScale": {
+        "bytes": "Б",
+        "kilobytes": "КБ",
+        "megabytes": "МБ",
+        "gigabytes": "ГБ",
+        "terabytes": "ТБ"
+      }
+    },
+    "episodes": {
+      "markAsWatched": "Отметить серию как просмотренную",
+      "unmarkAsWatched": "Снять отметку о просмотре",
+      "markAllAsWatched": "Отметить все серии как просмотренные",
+      "unmarkAllAsWatched": "Снять отметку о просмотре со всех серий",
+      "defaultTitle": "Серия {{episode}}"
     }
   },
   "player": {
@@ -210,8 +258,6 @@
       "toList": "К списку релизов",
       "catalog": "Каталог",
       "favorites": "Избранное",
-      "settings": "Настройки",
-      "exit": "Выход",
       "episodes": "Эпизоды",
       "torrent": "Торрент",
       "skipOpening": "Пропустить опенинг"
@@ -219,10 +265,32 @@
     "torrent": {
       "title": "Торрент",
       "subtitle": "Данные по воспроизводимому торренту и соединению",
-      "notice": "Малое количество сидеров и личеров может негативно сказаться на скорости загрузки и привести к буфферизации воспроизведения"
+      "notice": "Малое количество сидеров и личеров может негативно сказаться на скорости загрузки и привести к буфферизации воспроизведения",
+      "torrentName": "Имя торрента",
+      "creationDate": "Дата создания торрента",
+      "seeders": "Сиды",
+      "leechers": "Личи",
+      "playingFile": "Воспроизводимый файл",
+      "fileSize": "Размер файла",
+      "downloadSpeed": "Скорость загрузки",
+      "uploadSpeed": "Скорость отдачи",
+      "progress": "Прогресс",
+      "sourceError": "Не удалось определить источник воспроизведения",
+      "connectionError": "Не удалось подключиться к источнику воспроизведения"
     },
     "episodes": {
-      "title": "Эпизоды"
+      "title": "Эпизоды",
+      "listSubtitle": "Список всех эпизодов релиза"
+    },
+    "noDataToPlay": "Нет данных для воспроизведения",
+    "skip": {
+      "markSkipped": "Отметить пропущенным",
+      "skip": "Пропустить",
+      "watch": "Смотреть",
+      "cancel": "Отмена"
+    },
+    "next": {
+      "cancel": "Отмена"
     },
     "status": {
       "paused": "ПАУЗА"
@@ -235,7 +303,9 @@
     "releases": "Релизы",
     "catalog": "Каталог",
     "favorites": "Избранное",
-    "settings": "Настройки"
+    "updateLatestReleases": "Обновить последние релизы",
+    "updatedAt": "Обновлено в {{datetime}}",
+    "refreshLatestReleases": "Обновить последние релизы"
   },
   "account": {
     "loginTooltip": "Авторизация",
@@ -243,7 +313,19 @@
     "login": {
       "title": "Авторизация",
       "emailOrLoginPlaceholder": "Email или логин",
-      "passwordPlaceholder": "Пароль"
+      "passwordPlaceholder": "Пароль",
+      "prompt": "Введите данные, которые вы использовали при регистрации на сайте Anilibria",
+      "loginWithVK": "Войти с помощью VK",
+      "userNotRegistered": "Пользователь не зарегистрирован"
+    },
+    "stats": {
+      "inFavorites": "В избранном",
+      "watched": "Просмотрено",
+      "timeSpent": "Времени потрачено на просмотр"
+    },
+    "errors": {
+      "sessionUndefined": "Сессия не определена",
+      "authError": "Ошибка авторизации: {{message}}"
     }
   },
   "releasesView": {
@@ -286,7 +368,8 @@
     "comments": "Комментарии",
     "torrents": "Торренты",
     "metaTitle": "Релиз [{releaseId}]: {releaseName}",
-    "relatedDataError": "Ошибка загрузки связанных данных"
+    "relatedDataError": "Ошибка загрузки связанных данных",
+    "loadError": "Ошибка загрузки релиза"
   },
   "releaseTorrents": {
     "useMagnetLinks": "Использовать magnet ссылки",
@@ -301,6 +384,10 @@
     "watchedOutOfTotalShort": "{watched} из {total}",
     "episodePlural": "эпизод | эпизода | эпизодов"
   },
+  "yearsView": {
+    "releasePlural": "релиз | релиза | релизов",
+    "episodePlural": "эпизод | эпизода | эпизодов"
+  },
   "blankView": {
     "back": "Назад",
     "videoNotAvailable": "Видео не доступно",
@@ -309,5 +396,12 @@
   "playerInterface": {
     "autoSkipOpeningOff": "Автопропуск опенинга выключен",
     "autoSkipOpeningOn": "Автопропуск опенинга включен"
+  },
+  "webtorrent": {
+    "parseError": "Ошибка разбора торрент-файла",
+    "fileNotFound": "Файл с таким порядковым номером не найден",
+    "initError": "Ошибка инициализации торрент-файла",
+    "notFound": "Торрент не найден",
+    "stopError": "Ошибка остановки и уничтожения торрент-файла"
   }
 }
