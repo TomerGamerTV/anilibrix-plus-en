@@ -13,3 +13,10 @@ thumbs.db
 .vscode
 dist
 .env
+AGENTS.md
+.codex/
+.agents/
+.codex-memory*
+codex-notes*
+serve*.log
+node_modules.corrupt.*

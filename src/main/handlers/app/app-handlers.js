@@ -1,5 +1,5 @@
 import { Main, Torrent } from '@main/utils/windows'
-import { app, ipcMain, ipcRenderer } from 'electron'
+import { app, BrowserWindow, ipcMain, ipcRenderer } from 'electron'
 import { start as startSystemSleepBlocker, stop as stopSystemSleepBlocker } from '../../utils/power-save-blocker'
 import { setEncrypted } from '@main/utils/safe-storage'
 import { catGirlFetch } from '@utils/fetch';
@@ -27,6 +27,7 @@ export const APP_TORRENT_PARSE = 'app:torrent_parse'
 export const APP_UPDATE_PROXY = 'app:update_proxy'
 export const APP_GET_SYSTEM_LOCALE = 'app:get_system_locale'
 export const APP_SET_LOCALE = 'app:set_locale'
+export const APP_ANILIST_OAUTH = 'app:anilist:oauth'
 
 const trackers = [
   'aHR0cDovL3RyLmxpYnJpYS5mdW46MjcxMC9hbm5vdW5jZQ==',
@@ -282,6 +283,78 @@ export const handleGetSystemLocale = (cb) => {
 export const invokeSetAppLocale = (locale) => ipcRenderer.invoke(APP_SET_LOCALE, locale)
 export const handleSetAppLocale = (cb) => {
   ipcMain.handle(APP_SET_LOCALE, async (event, locale) => cb(locale))
+}
+
+function extractAniListAccessToken (url) {
+  const parsed = new URL(url)
+  const hash = parsed.hash && parsed.hash.startsWith('#')
+    ? parsed.hash.slice(1)
+    : parsed.hash
+  const hashParams = new URLSearchParams(hash)
+  const queryParams = parsed.searchParams
+
+  return hashParams.get('access_token') || queryParams.get('access_token')
+}
+
+export const invokeAniListOAuth = () => ipcRenderer.invoke(APP_ANILIST_OAUTH)
+export const handleAniListOAuth = () => {
+  ipcMain.handle(APP_ANILIST_OAUTH, async () => {
+    const clientId = process.env.ANILIST_CLIENT_ID
+    if (!clientId) {
+      throw new Error('AniList OAuth client ID is not configured')
+    }
+
+    const authUrl = new URL('https://anilist.co/api/v2/oauth/authorize')
+    authUrl.searchParams.set('client_id', clientId)
+    authUrl.searchParams.set('response_type', 'token')
+    if (process.env.ANILIST_REDIRECT_URI) {
+      authUrl.searchParams.set('redirect_uri', process.env.ANILIST_REDIRECT_URI)
+    }
+
+    return new Promise((resolve, reject) => {
+      let settled = false
+      const parent = Main.getWindow()
+      const authWindow = new BrowserWindow({
+        parent,
+        modal: Boolean(parent),
+        width: 760,
+        height: 760,
+        autoHideMenuBar: true,
+        webPreferences: {
+          nodeIntegration: false,
+          contextIsolation: true
+        }
+      })
+
+      const settle = (callback, value) => {
+        if (settled) return
+        settled = true
+        if (!authWindow.isDestroyed()) authWindow.close()
+        callback(value)
+      }
+
+      const inspectUrl = (url) => {
+        try {
+          const token = extractAniListAccessToken(url)
+          if (token) settle(resolve, token)
+        } catch (error) {
+          console.log('Failed to inspect AniList OAuth URL', error)
+        }
+      }
+
+      authWindow.webContents.on('will-redirect', (event, url) => inspectUrl(url))
+      authWindow.webContents.on('did-navigate', (event, url) => inspectUrl(url))
+      authWindow.webContents.on('did-navigate-in-page', (event, url) => inspectUrl(url))
+      authWindow.on('closed', () => {
+        if (!settled) {
+          settled = true
+          reject(new Error('AniList sign-in was cancelled'))
+        }
+      })
+
+      authWindow.loadURL(authUrl.toString()).catch(error => settle(reject, error))
+    })
+  })
 }
 
 export const invokeTorrentParse = (url) => ipcRenderer.invoke(APP_TORRENT_PARSE, url)

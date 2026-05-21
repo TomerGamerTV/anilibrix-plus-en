@@ -8,6 +8,7 @@ export class APIResponseTransformer {
 
     return {
       announce: release.announce,
+      anilist: release.anilist || null,
       blockedInfo: {
         bakanim: false,
         blocked: false,

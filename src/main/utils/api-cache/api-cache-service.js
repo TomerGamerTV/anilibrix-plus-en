@@ -13,6 +13,46 @@ import { ReleaseLocalizationService } from './release-localization-service';
 
 const SEARCH_RESULT_SCORE_THRESHOLD = 0.42
 
+function uniqueStrings (values) {
+  return [...new Set(
+    values
+      .filter(value => typeof value === 'string')
+      .map(value => value.trim())
+      .filter(Boolean)
+  )]
+}
+
+function normalizeAniListEntry (entry) {
+  if (!entry || !entry.id) return null
+
+  return {
+    id: entry.id,
+    anilibria_id: entry.anilibria_id || null,
+    titles: entry.titles || {},
+    synonyms: entry.synonyms || [],
+    format: entry.format || null,
+    episodes: entry.episodes || null,
+    duration: entry.duration || null,
+    status: entry.status || null,
+    season: entry.season || null,
+    season_year: entry.season_year || null,
+    start_date: entry.start_date || null,
+    end_date: entry.end_date || null
+  }
+}
+
+function collectAniListAliases (anilist) {
+  if (!anilist) return []
+
+  return uniqueStrings([
+    anilist.titles?.romaji,
+    anilist.titles?.english,
+    anilist.titles?.native,
+    anilist.titles?.user_preferred,
+    ...(anilist.synonyms || [])
+  ])
+}
+
 export class APICacheService {
   constructor(cachePath) {
     this.cachePath = cachePath;
@@ -71,6 +111,16 @@ export class APICacheService {
     );
 
     return Object.freeze(filesData.flat());
+  }
+
+  async resolveJsonFileCount(activeCachePrefix, baseName, metadataCount = 0) {
+    const files = await fs.readdir(this.cachePath).catch(() => [])
+    const escapedPrefix = activeCachePrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const escapedBaseName = baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const matcher = new RegExp(`^${escapedPrefix}_${escapedBaseName}\\d+\\.json$`)
+    const discoveredCount = files.filter(file => matcher.test(file)).length
+
+    return discoveredCount || metadataCount || 0
   }
 
   async downloadFile(url, filePath) {
@@ -236,18 +286,32 @@ export class APICacheService {
 
   async processCache() {
     const activeCachePrefix = await fs.readFile(path.join(this.cachePath, 'active.cache'), 'utf8')
-    const { countEpisodes, countReleases } = await this.loadCacheMetadata();
+    const metadata = await this.loadCacheMetadata();
+    const countEpisodes = await this.resolveJsonFileCount(activeCachePrefix, 'episodes', metadata.countEpisodes)
+    const countReleases = await this.resolveJsonFileCount(activeCachePrefix, 'releases', metadata.countReleases)
+    const countAnilist = await this.resolveJsonFileCount(activeCachePrefix, 'anilist', metadata.countAnilist)
     await this.localizationService.ensureLoaded()
 
-    const [releasesData, episodesData, franchisesData, torrentsData] = await Promise.all([
+    const [releasesData, episodesData, franchisesData, torrentsData, anilistData] = await Promise.all([
       this.loadJsonFiles(activeCachePrefix + '_' + 'releases', countReleases),
       this.loadJsonFiles(activeCachePrefix + '_' + 'episodes', countEpisodes),
       this.loadJsonFiles(activeCachePrefix + '_' + 'releaseseries', 1, true),
-      this.loadJsonFiles(activeCachePrefix + '_' + 'torrents', 1, true)
+      this.loadJsonFiles(activeCachePrefix + '_' + 'torrents', 1, true),
+      countAnilist > 0
+        ? this.loadJsonFiles(activeCachePrefix + '_' + 'anilist', countAnilist)
+        : Promise.resolve([])
     ]);
 
     this.torrentsRaw = new Map();
     this.torrents = new Map();
+    this.anilistData = anilistData.map(normalizeAniListEntry).filter(Boolean)
+    this.anilistById = new Map(this.anilistData.map(item => [item.id, item]))
+    this.anilistByReleaseId = new Map(
+      this.anilistData
+        .filter(item => item.anilibria_id)
+        .map(item => [Number(item.anilibria_id), item])
+    )
+    this.unmatchedAnilist = this.anilistData.filter(item => !item.anilibria_id)
 
     for (const torrent of torrentsData) {
       if (!this.torrents.has(torrent.releaseId)) {
@@ -284,6 +348,14 @@ export class APICacheService {
         release,
         episodesByReleaseId.get(release.id) || []
       );
+      const anilist = this.anilistByReleaseId.get(Number(release.id))
+      if (anilist) {
+        release.anilist = anilist
+        release.searchAliases = uniqueStrings([
+          ...(release.searchAliases || []),
+          ...collectAniListAliases(anilist)
+        ])
+      }
       return this.releases.set(release.id, release)
     });
 

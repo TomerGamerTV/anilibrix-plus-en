@@ -22,6 +22,7 @@ export default class CatalogTransformer extends BaseTransformer {
 
     return {
       id: this.get(release, 'id'),
+      anilist: this.get(release, 'anilist'),
       year: this.get(release, 'year'),
       type: this.get(release, 'type'),
       names,

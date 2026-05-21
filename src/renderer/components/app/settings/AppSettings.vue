@@ -59,6 +59,7 @@ import SystemSettings from './categories/system'
 import ActionsSettings from './categories/actions'
 import DevtoolsSettings from './categories/devtools'
 import AnilibriaSettings from './categories/app'
+import SyncSettings from './categories/sync'
 
 import SystemBarPlaceholder from './../systembar/placeholder'
 
@@ -86,6 +87,7 @@ export default {
     categories () {
       return [
         PlayerSettings,
+        SyncSettings,
         SystemSettings,
         ActionsSettings,
         AnilibriaSettings,

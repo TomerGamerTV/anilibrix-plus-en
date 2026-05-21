@@ -169,6 +169,7 @@ export default {
           k: `${release_id}:${episode_id}`,
           v: data
         })
+        dispatch('app/sync/queueRelease', release_id, { root: true })
       }
     },
 
@@ -193,6 +194,7 @@ export default {
     }) => {
       // eslint-disable-next-line camelcase
       commit(REMOVE_WATCH_DATA, `${release_id}:${episode_id}`)
+      dispatch('app/sync/queueRelease', release_id, { root: true })
     },
 
     /**

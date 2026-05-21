@@ -1,6 +1,7 @@
 import watch from './watch'
 import account from './account'
 import settings from './settings'
+import sync from './sync'
 
 const SET_DRAWER = 'SET_DRAWER'
 const SET_SEARCHING = 'SET_SEARCHING'
@@ -11,7 +12,8 @@ export default {
   modules: {
     watch,
     account,
-    settings
+    settings,
+    sync
   },
 
   state: {

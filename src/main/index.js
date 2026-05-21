@@ -263,6 +263,7 @@ if (!gotTheLock) {
 
         return normalized
       })
+      handlers.handleAniListOAuth()
       broadcastTorrentEvents()
     })
 }

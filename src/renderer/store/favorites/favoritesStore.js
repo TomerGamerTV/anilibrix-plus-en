@@ -253,6 +253,7 @@ export default {
           // Make request to server
           // On error -> rollback
           await new FavoritesProxy().addToFavorites(release.id, { cancelToken: REQUESTS_FOR_CHANGES[release.id].token })
+          dispatch('app/sync/queueRelease', release.id, { root: true })
         } catch (error) {
           if (!axios.isCancel(error)) {
             // Rollback added release

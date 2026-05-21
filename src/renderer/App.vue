@@ -10,6 +10,7 @@
 
     <app-errors/>
     <app-notifications/>
+    <app-sync-onboarding/>
 
     <AppUpdate :notes="update_notes" ref="appUpdate"/>
   </v-app>
@@ -24,6 +25,7 @@ import AppSystemBar from '@components/app/systembar'
 import AppBaseLayout from '@layouts/base'
 import AppNotifications from '@components/app/notifications'
 import AppUpdate from '@components/app/AppUpdate.vue'
+import AppSyncOnboarding from '@components/app/sync-onboarding'
 import { version } from '@package'
 import { setLocale } from './i18n'
 import { setVuetifyLocale } from '@plugins/vuetify'
@@ -42,6 +44,7 @@ export default {
     AppSystemBar,
     AppBaseLayout,
     AppNotifications,
+    AppSyncOnboarding,
     AppUpdate
   },
   data () {
@@ -153,6 +156,8 @@ export default {
   },
 
   async created() {
+    this.$store.dispatch('app/sync/initialize')
+
     const last_page_release = localStorage.getItem('last_page_release')
     // Initial loading
     this.loading = true

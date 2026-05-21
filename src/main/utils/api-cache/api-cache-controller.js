@@ -155,6 +155,8 @@ export class APIController {
         data = this.cacheService.years;
       } else if (type === 'genres') {
         data = this.cacheService.genres;
+      } else if (type === 'anilist_unmatched') {
+        data = this.cacheService.unmatchedAnilist || [];
       }
 
       return { data, error: null, status: true };

@@ -25,6 +25,7 @@ export default class ReleaseTransformer extends BaseTransformer {
 
     return {
       id: this.get(release, 'id'),
+      anilist: this.get(release, 'anilist'),
       year: this.get(release, 'year'),
       type: this.get(release, 'type'),
       code: this.get(release, 'code'),

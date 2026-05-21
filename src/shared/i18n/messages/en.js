@@ -126,7 +126,31 @@ export default {
     cacheServer: 'Cache Server',
     hashFileUrl: 'Hash File URL',
     cacheServerHint: 'Server for caching data and hash file for integrity verification',
-    offOperaProxyForCustom: 'Disable Opera Proxy to set your own proxy server'
+    offOperaProxyForCustom: 'Disable Opera Proxy to set your own proxy server',
+    syncTitle: 'Tracking sync',
+    syncDescription: 'Sync watched episode counts and tracked titles with external anime list services.',
+    syncTokenHint: 'Paste an AniList access token to connect sync. The token is stored encrypted in the local app data.',
+    syncTokenLabel: 'AniList access token',
+    syncOAuthConnect: 'Sign in with AniList',
+    syncOAuthUnavailable: 'OAuth sign-in needs ANILIST_CLIENT_ID in the app environment.',
+    syncManualToken: 'You can also paste a token manually if OAuth is not configured.',
+    syncConnectedAs: 'Connected as {user}',
+    syncAutomatic: 'Automatic background sync',
+    syncLastSync: 'Last sync: {datetime}',
+    syncConnect: 'Connect',
+    syncDisconnect: 'Disconnect',
+    syncNow: 'Sync now'
+  },
+  syncOnboarding: {
+    title: 'Sync watch history',
+    description: 'AniLibrix Plus can sync watched episode counts and tracked titles with an anime list service.',
+    anilistSubtitle: 'Available now for watch progress and list sync',
+    shikimoriSubtitle: 'Planned provider',
+    malSubtitle: 'Planned provider',
+    comingSoon: 'Soon',
+    notNow: 'Not now',
+    configureLater: 'Open settings',
+    settingsHint: 'You can enable tracking sync later from App settings.'
   },
   releases: {
     pageTitle: 'Latest releases',

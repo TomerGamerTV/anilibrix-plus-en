@@ -17,6 +17,7 @@ export default class SearchTransformer extends BaseTransformer {
 
     return {
       id: this.get(release, 'id'),
+      anilist: this.get(release, 'anilist'),
       names,
       displayTitle: this._stripHtml(this.get(release, 'displayTitle')) || names.en || names.ru || names.original,
       displaySubtitle: this._stripHtml(this.get(release, 'displaySubtitle')) || names.original || names.ru || names.en,
